@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #37474F;
+  --color-accent: #2E7D32;
+  --color-surface: #F5F7F8;
+  --color-body: #263238;
+  --color-muted: #546E7A;
+  --radius-max: 4px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--color-surface);
+  color: var(--color-body);
+}
+
+/* Ensure all rounded classes respect the 4px maximum */
+* {
+  border-radius: var(--radius-max);
+}
+
+/* JetBrains Mono for data */
+.font-data {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
