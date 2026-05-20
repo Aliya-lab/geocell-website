@@ -1,18 +1,20 @@
+import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
 
 export function HeroSection() {
   return (
-    <section className="min-h-screen bg-gradient-to-br from-slate-rock-800 to-slate-rock-700 flex items-center relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%), repeating-linear-gradient(-45deg, #fff 0, #fff 1px, transparent 0, transparent 50%)`,
-            backgroundSize: '20px 20px',
-          }}
-        />
-      </div>
+    <section className="min-h-screen flex items-center relative overflow-hidden">
+      {/* Background Image */}
+      <Image
+        src="/images/hero-bg.png"
+        alt="Geocell slope protection on highway embankment"
+        fill
+        className="object-cover"
+        priority
+        sizes="100vw"
+      />
+      {/* Dark Overlay - brand color at 60% opacity */}
+      <div className="absolute inset-0 bg-slate-rock-700/60" />
 
       <div className="max-w-[1200px] mx-auto px-6 py-20 relative z-10">
         <div className="max-w-2xl">

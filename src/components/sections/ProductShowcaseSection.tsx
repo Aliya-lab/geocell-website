@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { Section } from '@/components/ui/Section'
 import { SpecTable } from '@/components/ui/SpecTable'
 import { Button } from '@/components/ui/Button'
@@ -20,13 +21,15 @@ export function ProductShowcaseSection() {
       </p>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-        {/* Left: Product Image Placeholder */}
-        <div className="aspect-[4/3] bg-slate-rock-50 rounded-card border border-slate-rock-50 flex flex-col items-center justify-center gap-3">
-          <svg width="64" height="64" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" className="text-slate-rock-200">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
-          <span className="text-slate-rock-300 text-sm font-medium">Product Image</span>
-          <span className="text-slate-rock-200 text-xs">PCA Geocell Type {product.type}</span>
+        {/* Left: Product Image */}
+        <div className="aspect-[4/3] rounded-card border border-slate-rock-50 overflow-hidden">
+          <Image
+            src="/images/product-showcase.png"
+            alt={`PCA Geocell Type ${product.type} product photo`}
+            width={960}
+            height={720}
+            className="w-full h-full object-cover"
+          />
         </div>
 
         {/* Right: Tabs + SpecTable */}

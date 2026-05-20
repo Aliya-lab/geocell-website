@@ -19,7 +19,7 @@ export const cases: ProjectCase[] = [
     description:
       'PCA Geocell Type B applied on 1:1.5 slope, 12m height, with vegetation establishment.',
     productUsed: 'PCA-B',
-    image: '/images/case-1.jpg',
+    image: '/images/case-1.png',
   },
   {
     id: 'case-2',
@@ -30,7 +30,7 @@ export const cases: ProjectCase[] = [
     description:
       'Type C geocell used for heavy-haul railway subgrade stabilization over soft soil.',
     productUsed: 'PCA-C',
-    image: '/images/case-2.jpg',
+    image: '/images/case-2.png',
   },
   {
     id: 'case-3',
@@ -40,7 +40,7 @@ export const cases: ProjectCase[] = [
     category: 'Channel Lining',
     description: 'Type B geocell with concrete fill for anti-seepage canal lining, 5km total length.',
     productUsed: 'PCA-B',
-    image: '/images/case-3.jpg',
+    image: '/images/case-3.png',
   },
   {
     id: 'case-4',
@@ -50,7 +50,7 @@ export const cases: ProjectCase[] = [
     category: 'Mining',
     description: 'Type D geocell for 200-ton haul truck access road over weak subgrade.',
     productUsed: 'PCA-D',
-    image: '/images/case-4.jpg',
+    image: '/images/case-4.png',
   },
   {
     id: 'case-5',
@@ -61,7 +61,7 @@ export const cases: ProjectCase[] = [
     description:
       'Type A geocell with vegetated fill for riverbank protection against seasonal flooding.',
     productUsed: 'PCA-A',
-    image: '/images/case-5.jpg',
+    image: '/images/case-5.png',
   },
   {
     id: 'case-6',
@@ -71,6 +71,6 @@ export const cases: ProjectCase[] = [
     category: 'Retaining Wall',
     description: 'Type C geocell reducing lateral earth pressure on 8m-high retaining wall.',
     productUsed: 'PCA-C',
-    image: '/images/case-6.jpg',
+    image: '/images/case-6.png',
   },
 ]

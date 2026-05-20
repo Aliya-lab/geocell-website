@@ -1,4 +1,5 @@
 import { Section } from '@/components/ui/Section'
+import Image from 'next/image'
 
 const milestones = [
   { year: '2010', event: 'Company founded in Beijing, China' },
@@ -59,8 +60,14 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-            <div className="aspect-[4/3] bg-slate-rock-100 rounded-card border border-slate-rock-50 flex items-center justify-center">
-              <div className="text-slate-rock-300 text-sm font-medium">Company Photo</div>
+            <div className="aspect-[4/3] rounded-card border border-slate-rock-50 overflow-hidden">
+              <Image
+                src="/images/company-photo.png"
+                alt="Manufacturing facility"
+                width={720}
+                height={540}
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </section>

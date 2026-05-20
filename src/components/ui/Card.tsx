@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ProjectCase } from '@/data/cases'
 
 interface CardProps {
@@ -52,10 +53,14 @@ export function CaseCard({ caseItem, onClick }: CaseCardProps) {
       onClick={onClick}
       className="bg-white border border-slate-rock-50 rounded-card shadow-card hover:-translate-y-1 hover:shadow-card-hover transition-all duration-200 ease-out overflow-hidden cursor-pointer"
     >
-      <div className="aspect-[4/3] bg-slate-rock-100 border-b border-slate-rock-50 flex items-center justify-center">
-        <div className="text-slate-rock-300 text-sm font-medium text-center px-4">
-          {caseItem.title}
-        </div>
+      <div className="aspect-[4/3] bg-slate-rock-100 border-b border-slate-rock-50 overflow-hidden">
+        <Image
+          src={caseItem.image}
+          alt={caseItem.title}
+          width={720}
+          height={540}
+          className="w-full h-full object-cover"
+        />
       </div>
       <div className="p-5">
         <h3 className="font-heading text-base font-semibold text-slate-rock-700 line-clamp-1">

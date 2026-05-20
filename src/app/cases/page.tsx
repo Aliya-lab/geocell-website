@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { CaseCard } from '@/components/ui/Card'
 import { Tag } from '@/components/ui/Tag'
 import { cases } from '@/data/cases'
@@ -66,10 +67,14 @@ export default function CasesPage() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Image */}
-            <div className="aspect-video bg-slate-rock-100 rounded-t-card flex items-center justify-center">
-              <div className="text-slate-rock-300 text-sm font-medium text-center px-4">
-                {selectedCase.title}
-              </div>
+            <div className="aspect-video bg-slate-rock-100 rounded-t-card overflow-hidden">
+              <Image
+                src={selectedCase.image}
+                alt={selectedCase.title}
+                width={1280}
+                height={720}
+                className="w-full h-full object-cover"
+              />
             </div>
 
             <div className="p-6">

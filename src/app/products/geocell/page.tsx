@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import Image from 'next/image'
 import { SpecTable } from '@/components/ui/SpecTable'
 import { Button } from '@/components/ui/Button'
 import { Card } from '@/components/ui/Card'
@@ -109,12 +110,15 @@ export default function GeocellPage() {
             Product Overview
           </h2>
 
-          {/* Hero Image Placeholder */}
-          <div className="aspect-video bg-slate-rock-100 rounded-card border border-slate-rock-50 flex flex-col items-center justify-center gap-3 mb-10">
-            <svg width="72" height="72" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" className="text-slate-rock-200">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            <span className="text-slate-rock-300 font-medium">PCA Geocell Product Line</span>
+          {/* Hero Image */}
+          <div className="aspect-video rounded-card border border-slate-rock-50 overflow-hidden mb-10">
+            <Image
+              src="/images/product-hero.png"
+              alt="PCA Geocell Product Line"
+              width={1280}
+              height={720}
+              className="w-full h-full object-cover"
+            />
           </div>
 
           {/* 4 Model Cards */}
