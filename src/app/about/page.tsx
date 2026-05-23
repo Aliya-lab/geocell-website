@@ -62,7 +62,7 @@ export default function AboutPage() {
             </div>
             <div className="aspect-[4/3] rounded-card border border-slate-rock-50 overflow-hidden">
               <Image
-                src="/images/company-photo.png"
+                src="/images/company-photo.webp"
                 alt="Manufacturing facility"
                 width={720}
                 height={540}

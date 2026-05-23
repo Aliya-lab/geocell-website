@@ -6,7 +6,7 @@ export function HeroSection() {
     <section className="min-h-screen flex items-center relative overflow-hidden">
       {/* Background Image */}
       <Image
-        src="/images/hero-bg.png"
+        src="/images/hero-bg.webp"
         alt="Geocell slope protection on highway embankment"
         fill
         className="object-cover"

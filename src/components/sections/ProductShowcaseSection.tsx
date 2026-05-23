@@ -24,7 +24,7 @@ export function ProductShowcaseSection() {
         {/* Left: Product Image */}
         <div className="aspect-[4/3] rounded-card border border-slate-rock-50 overflow-hidden">
           <Image
-            src="/images/product-showcase.png"
+            src="/images/product-showcase.webp"
             alt={`PCA Geocell Type ${product.type} product photo`}
             width={960}
             height={720}

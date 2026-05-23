@@ -113,7 +113,7 @@ export default function GeocellPage() {
           {/* Hero Image */}
           <div className="aspect-video rounded-card border border-slate-rock-50 overflow-hidden mb-10">
             <Image
-              src="/images/product-hero.png"
+              src="/images/product-hero.webp"
               alt="PCA Geocell Product Line"
               width={1280}
               height={720}
