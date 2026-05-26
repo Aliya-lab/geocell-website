@@ -1,5 +1,12 @@
+import type { Metadata } from 'next'
 import { Section } from '@/components/ui/Section'
 import Image from 'next/image'
+
+export const metadata: Metadata = {
+  title: 'About SylvaGeo',
+  description: 'Learn about SylvaGeo - professional PCA geocell manufacturer since 2010. 200+ engineering projects worldwide.',
+  alternates: { canonical: 'https://www.sylvageo.com/about' },
+}
 
 const milestones = [
   { year: '2010', event: 'Company founded in Beijing, China' },
@@ -12,10 +19,10 @@ const milestones = [
 ]
 
 const certifications = [
-  { name: 'ISO 9001', number: 'CN-2015-QMS-001' },
-  { name: 'ISO 14001', number: 'CN-2015-EMS-001' },
-  { name: 'CE Marking', number: 'CE-2020-EU-0123' },
-  { name: 'CQC Certificate', number: 'CQC-2018-XXXX' },
+  { name: 'ISO 9001', number: 'Quality Management' },
+  { name: 'ISO 14001', number: 'Environmental Management' },
+  { name: 'CE Marking', number: 'EU Conformity' },
+  { name: 'CQC Certificate', number: 'China Quality Certification' },
 ]
 
 export default function AboutPage() {
@@ -41,7 +48,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-slate-rock-500 text-sm leading-relaxed">
                 <p>
-                  Geocell is a professional manufacturer specializing in Polymer Nano-Composite
+                  SylvaGeo is a professional manufacturer specializing in Polymer Nano-Composite
                   Alloy (PCA) geocell systems for civil engineering and environmental
                   protection applications. Founded in 2010, we have served over 200
                   infrastructure projects across more than 30 countries.

@@ -15,10 +15,10 @@ const subNavLinks = [
 ]
 
 const downloadItems = [
-  { name: 'Technical Data Sheet', format: 'PDF', size: '2.4 MB' },
-  { name: 'Test Reports', format: 'PDF', size: '1.8 MB' },
-  { name: 'CAD Drawings', format: 'DWG', size: '5.1 MB' },
-  { name: 'Installation Guide', format: 'PDF', size: '3.2 MB' },
+  { name: 'Technical Data Sheet', format: 'PDF', size: '2.4 MB', href: '/downloads/technical-data-sheet.pdf' },
+  { name: 'Test Reports', format: 'PDF', size: '1.8 MB', href: '/downloads/test-reports.pdf' },
+  { name: 'CAD Drawings', format: 'DWG', size: '5.1 MB', href: '/downloads/cad-drawings.dwg' },
+  { name: 'Installation Guide', format: 'PDF', size: '3.2 MB', href: '/downloads/installation-guide.pdf' },
 ]
 
 function SubNav({ activeSection }: { activeSection: string }) {
@@ -222,8 +222,8 @@ export default function GeocellPage() {
                 <ul className="space-y-1.5">
                   {item.apps.map((app) => (
                     <li key={app} className="flex items-center gap-2 text-sm text-slate-rock-600">
-                      <svg className="w-3.5 h-3.5 text-eco-forest-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      <svg className="w-3.5 h-3.5 text-eco-forest-400 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
                       {app}
                     </li>
@@ -241,8 +241,11 @@ export default function GeocellPage() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {downloadItems.map((item) => (
-              <div
+              <a
                 key={item.name}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white border border-slate-rock-50 rounded-card shadow-card p-5 flex items-center gap-4 hover:-translate-y-0.5 hover:shadow-card-hover transition-all duration-200 cursor-pointer"
               >
                 <div className="w-10 h-10 bg-eco-forest-50 rounded-btn flex items-center justify-center flex-shrink-0">
@@ -262,7 +265,7 @@ export default function GeocellPage() {
                 <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="text-slate-rock-400 flex-shrink-0">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                 </svg>
-              </div>
+              </a>
             ))}
           </div>
         </section>

@@ -15,11 +15,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Column 1: Company */}
           <div>
-            <div className="font-heading font-bold text-white text-xl mb-3">GEOCELL</div>
+            <div className="font-heading font-bold text-white text-xl mb-3">SYLVAGEO</div>
             <p className="text-slate-rock-300 text-sm leading-relaxed">
-              Professional manufacturer of Polymer Nano-Composite Alloy (PCA) geocell
-              systems. Engineering-grade solutions for slope protection, road
-              reinforcement, and channel lining since 2010.
+              SylvaGeo is a professional manufacturer of Polymer Nano-Composite Alloy
+              (PCA) geocell systems. Engineering-grade solutions for slope protection,
+              road reinforcement, and channel lining since 2010.
             </p>
           </div>
 
@@ -54,7 +54,7 @@ export function Footer() {
                 <svg className="w-4 h-4 text-eco-forest-400 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <span className="text-slate-rock-300 text-sm">info@geocell.com</span>
+                <span className="text-slate-rock-300 text-sm">info@sylvageo.com</span>
               </li>
               <li className="flex items-center gap-2">
                 <svg className="w-4 h-4 text-eco-forest-400 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -69,11 +69,16 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-slate-rock-600 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-slate-rock-400 text-xs">
-            &copy; {new Date().getFullYear()} Geocell. All rights reserved.
-          </p>
+          <div className="flex items-center gap-4 text-xs">
+            <p className="text-slate-rock-400">
+              &copy; {new Date().getFullYear()} SylvaGeo. All rights reserved.
+            </p>
+            <a href="/privacy" className="text-slate-rock-400 hover:text-eco-forest-400 transition-colors">
+              Privacy Policy
+            </a>
+          </div>
           <p className="text-slate-rock-500 text-xs">
-            Powered by PCA Technology
+            Manufactured with PCA Technology
           </p>
         </div>
       </div>

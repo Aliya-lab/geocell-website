@@ -50,7 +50,7 @@ export function HeroSection() {
               className="min-h-[48px] text-base px-8 py-3 border-white text-white hover:bg-white hover:text-slate-rock-700"
               href="/contact"
             >
-              Download Catalog
+              Get in Touch
             </Button>
           </div>
 

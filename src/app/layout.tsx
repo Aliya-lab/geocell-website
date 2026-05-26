@@ -8,8 +8,26 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const mono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' })
 
 export const metadata: Metadata = {
-  title: 'Geocell - Professional Honeycomb Confinement System',
-  description: 'Engineering-grade geocell solutions for slope protection, road reinforcement, and channel lining.',
+  title: {
+    default: 'SylvaGeo - Professional Geocell Solutions',
+    template: '%s | SylvaGeo',
+  },
+  description: 'SylvaGeo provides engineering-grade PCA geocell solutions for slope protection, road reinforcement, and channel lining worldwide.',
+  metadataBase: new URL('https://www.sylvageo.com'),
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://www.sylvageo.com',
+    siteName: 'SylvaGeo',
+    title: 'SylvaGeo - Professional Geocell Solutions',
+    description: 'Engineering-grade PCA geocell solutions for slope protection, road reinforcement, and channel lining worldwide.',
+    images: [{ url: '/images/og-image.png', width: 1200, height: 630, alt: 'SylvaGeo PCA Geocell Solutions' }],
+  },
+  alternates: { canonical: 'https://www.sylvageo.com' },
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
 }
 
 export default function RootLayout({

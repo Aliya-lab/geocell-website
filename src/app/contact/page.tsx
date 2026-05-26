@@ -215,7 +215,7 @@ export default function ContactPage() {
                       </svg>
                     ),
                     label: 'Address',
-                    value: 'Beijing, China',
+                    value: 'China',
                   },
                   {
                     icon: (
@@ -233,7 +233,7 @@ export default function ContactPage() {
                       </svg>
                     ),
                     label: 'Email',
-                    value: 'info@geocell.com',
+                    value: 'info@sylvageo.com',
                   },
                 ].map((item) => (
                   <div key={item.label} className="flex items-start gap-3">

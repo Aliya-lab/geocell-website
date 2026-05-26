@@ -35,7 +35,7 @@ export function Header() {
             <Link href="/" className="flex items-center gap-2 group">
               <div className="w-2 h-2 bg-eco-forest-400 rounded-full group-hover:bg-eco-forest-300 transition-colors" />
               <span className="font-heading font-bold text-white text-lg tracking-wide">
-                GEOCELL
+                SYLVAGEO
               </span>
             </Link>
 
