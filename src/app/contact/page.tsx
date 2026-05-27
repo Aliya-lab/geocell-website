@@ -232,6 +232,7 @@ export default function ContactPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
                     ),
+                    // TODO: Replace with full business address once confirmed
                     label: 'Address',
                     value: 'China',
                   },
@@ -253,12 +254,27 @@ export default function ContactPage() {
                     label: 'Email',
                     value: 'info@sylvageo.com',
                   },
+                  {
+                    icon: (
+                      <svg className="w-5 h-5 text-eco-forest-800" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.327 0-4.542-.681-6.435-1.966l-.246-.166-3.044 1.02 1.02-3.044-.166-.246A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+                      </svg>
+                    ),
+                    label: 'WhatsApp',
+                    value: '+1 6692284383',
+                    href: 'https://wa.me/16692284383',
+                  },
                 ].map((item) => (
                   <div key={item.label} className="flex items-start gap-3">
                     <div className="mt-0.5 flex-shrink-0">{item.icon}</div>
                     <div>
                       <div className="text-xs text-slate-rock-400">{item.label}</div>
-                      <div className="text-sm text-slate-rock-700">{item.value}</div>
+                      {item.href ? (
+                        <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-sm text-eco-forest-800 hover:text-eco-forest-900 transition-colors">{item.value}</a>
+                      ) : (
+                        <div className="text-sm text-slate-rock-700">{item.value}</div>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -266,6 +282,7 @@ export default function ContactPage() {
             </div>
 
             {/* Map Embed */}
+            {/* TODO: Replace with actual Google Maps embed URL once precise address is available */}
             <div className="aspect-[4/3] rounded-card border border-slate-rock-50 overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d369095.1234567890!2d116.3!3d39.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDU5JzI1LjAiTiAxMTbCsDE3JzU5LjAiRQ!5e0!3m2!1sen!2scn!4v1234567890"
