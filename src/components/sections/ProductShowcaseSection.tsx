@@ -21,10 +21,11 @@ export function ProductShowcaseSection() {
       </p>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-        {/* Left: Product Image */}
+        {/* Left: Product Image - changes per tab */}
         <div className="aspect-[4/3] rounded-card border border-slate-rock-50 overflow-hidden">
           <Image
-            src="/images/product-showcase.webp"
+            key={product.type}
+            src={`/images/product-type-${product.type.toLowerCase()}.webp`}
             alt={`PCA Geocell Type ${product.type} product photo`}
             width={960}
             height={720}

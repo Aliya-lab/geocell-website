@@ -126,30 +126,41 @@ export default function GeocellPage() {
             {geocellProducts.map((product) => (
               <div
                 key={product.id}
-                className="bg-white border border-slate-rock-50 rounded-card shadow-card p-5 hover:shadow-card-hover transition-shadow duration-200"
+                className="bg-white border border-slate-rock-50 rounded-card shadow-card overflow-hidden hover:shadow-card-hover transition-shadow duration-200"
               >
-                <div className="flex items-center justify-between mb-3">
-                  <span className="bg-eco-forest-800 text-white text-xs font-semibold px-3 py-1 rounded-tag">
-                    Type {product.type}
-                  </span>
-                  <span className="text-xs text-slate-rock-400">
-                    {product.heights[0]}
-                    {product.heights.length > 1 ? `–${product.heights[product.heights.length - 1]}` : ''}
-                    mm
-                  </span>
+                <div className="aspect-[4/3] overflow-hidden bg-slate-rock-50">
+                  <Image
+                    src={`/images/product-type-${product.type.toLowerCase()}.webp`}
+                    alt={`PCA Geocell Type ${product.type}`}
+                    width={400}
+                    height={300}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className="font-heading font-semibold text-slate-rock-700 text-sm mb-2">
-                  {product.name}
-                </h3>
-                <p className="text-xs text-slate-rock-500 mb-3 line-clamp-2">
-                  {product.applications.slice(0, 2).join(', ')}
-                </p>
-                <a
-                  href="#specifications"
-                  className="text-eco-forest-800 text-xs font-medium hover:text-eco-forest-900 underline"
-                >
-                  View Specs →
-                </a>
+                <div className="p-5">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="bg-eco-forest-800 text-white text-xs font-semibold px-3 py-1 rounded-tag">
+                      Type {product.type}
+                    </span>
+                    <span className="text-xs text-slate-rock-400">
+                      {product.heights[0]}
+                      {product.heights.length > 1 ? `–${product.heights[product.heights.length - 1]}` : ''}
+                      mm
+                    </span>
+                  </div>
+                  <h3 className="font-heading font-semibold text-slate-rock-700 text-sm mb-2">
+                    {product.name}
+                  </h3>
+                  <p className="text-xs text-slate-rock-500 mb-3 line-clamp-2">
+                    {product.applications.slice(0, 2).join(', ')}
+                  </p>
+                  <a
+                    href="#specifications"
+                    className="text-eco-forest-800 text-xs font-medium hover:text-eco-forest-900 underline"
+                  >
+                    View Specs →
+                  </a>
+                </div>
               </div>
             ))}
           </div>
