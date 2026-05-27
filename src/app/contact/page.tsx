@@ -56,7 +56,7 @@ export default function ContactPage() {
     return e
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     const errs = validate()
     if (Object.keys(errs).length > 0) {
@@ -64,7 +64,25 @@ export default function ContactPage() {
       return
     }
     setErrors({})
-    setSubmitted(true)
+    try {
+      const res = await fetch('https://formspree.io/f/xwvzwaqj', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          company: form.company,
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          projectType: form.projectType,
+          message: form.message,
+        }),
+      })
+      if (res.ok) {
+        setSubmitted(true)
+      }
+    } catch {
+      // silently fail, form stays open
+    }
   }
 
   const update = (field: keyof FormState) => (
@@ -224,7 +242,7 @@ export default function ContactPage() {
                       </svg>
                     ),
                     label: 'Phone',
-                    value: '+86 10 8888 9999',
+                    value: '+1 6692284383',
                   },
                   {
                     icon: (

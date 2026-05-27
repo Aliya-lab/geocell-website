@@ -37,6 +37,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${mono.variable}`}>
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-PX107W9NQP" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-PX107W9NQP');
+            `,
+          }}
+        />
+      </head>
       <body className="font-body bg-pearl-grey text-slate-rock-800">
         <Header />
         <main>{children}</main>
