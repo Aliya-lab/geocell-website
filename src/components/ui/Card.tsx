@@ -15,8 +15,14 @@ export function Card({ title, description, image, href, children, className = ''
   const content = (
     <>
       {image && (
-        <div className="aspect-[4/3] bg-slate-rock-50 border-b border-slate-rock-50 overflow-hidden flex items-center justify-center">
-          <div className="text-slate-rock-300 text-sm font-medium">Image: {title}</div>
+        <div className="aspect-[4/3] bg-slate-rock-50 border-b border-slate-rock-50 overflow-hidden">
+          <Image
+            src={image}
+            alt={title}
+            width={720}
+            height={540}
+            className="w-full h-full object-cover"
+          />
         </div>
       )}
       <div className="p-5">

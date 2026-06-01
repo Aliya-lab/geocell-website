@@ -15,7 +15,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Column 1: Company */}
           <div>
-            <div className="font-heading font-bold text-white text-xl mb-3">SYLVAGEO</div>
+            <div className="flex items-center gap-2.5 mb-3">
+              <svg width="24" height="24" viewBox="0 0 100 100" aria-hidden="true">
+                <polygon points="50,8 88,28 88,72 50,92 12,72 12,28" fill="#2E7D32" />
+                <ellipse cx="50" cy="50" rx="18" ry="23" fill="#1e293b" />
+              </svg>
+              <span className="font-heading font-bold text-white text-xl">SYLVAGEO</span>
+            </div>
             <p className="text-slate-rock-300 text-sm leading-relaxed">
               SylvaGeo is a professional manufacturer of Polymer Nano-Composite Alloy
               (PCA) geocell systems. Engineering-grade solutions for slope protection,

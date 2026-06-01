@@ -14,6 +14,25 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'SylvaGeo',
+            url: 'https://www.sylvageo.com',
+            logo: 'https://www.sylvageo.com/favicon.ico',
+            description: 'Professional PCA geocell manufacturer for slope protection, road reinforcement, and channel lining.',
+            contactPoint: {
+              '@type': 'ContactPoint',
+              telephone: '+1-669-228-4383',
+              contactType: 'sales',
+              availableLanguage: ['English', 'Chinese'],
+            },
+          }),
+        }}
+      />
       <HeroSection />
       <FeaturesSection />
       <ProductShowcaseSection />

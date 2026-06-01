@@ -8,8 +8,8 @@ import { Button } from '@/components/ui/Button'
 import { geocellProducts } from '@/data/geocell'
 
 export function ProductShowcaseSection() {
-  const [activeTab, setActiveTab] = useState(0)
-  const product = geocellProducts[activeTab]
+  const [activeTab, setActiveTab] = useState<number | null>(null)
+  const product = activeTab !== null ? geocellProducts[activeTab] : null
 
   return (
     <Section className="bg-white" id="products">
@@ -21,16 +21,43 @@ export function ProductShowcaseSection() {
       </p>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-        {/* Left: Product Image - changes per tab */}
-        <div className="aspect-[4/3] rounded-card border border-slate-rock-50 overflow-hidden">
+        {/* Left: Product Image - enhanced with overlay + fade transition */}
+        <div className="relative aspect-[4/3] rounded-card border border-slate-rock-100 overflow-hidden bg-slate-rock-50 shadow-card">
+          {/* Base image: showcase panoramic or per-type photo */}
           <Image
-            key={product.type}
-            src={`/images/product-type-${product.type.toLowerCase()}.webp`}
-            alt={`PCA Geocell Type ${product.type} product photo`}
+            key={product ? product.type : 'showcase'}
+            src={product ? `/images/product-type-${product.type.toLowerCase()}.webp` : '/images/product-showcase.webp'}
+            alt={product ? `PCA Geocell Type ${product.type} product photo` : 'PCA Geocell Product Line'}
             width={960}
             height={720}
-            className="w-full h-full object-cover"
+            priority
+            className="w-full h-full object-cover transition-opacity duration-300"
           />
+
+          {/* Bottom gradient overlay with model badge */}
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-rock-900/75 to-transparent pt-10 pb-4 px-4">
+            {product ? (
+              <>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="bg-eco-forest-800 text-white text-xs font-bold px-3 py-1 rounded-tag">
+                    Type {product.type}
+                  </span>
+                  <span className="text-white text-sm font-medium truncate">
+                    {product.name}
+                  </span>
+                </div>
+                <div className="text-white/60 text-xs">
+                  {product.applications.slice(0, 2).join(' / ')}
+                </div>
+              </>
+            ) : (
+              <div className="flex items-center gap-2">
+                <span className="text-white/80 text-xs">
+                  Select a model below to view specifications
+                </span>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Right: Tabs + SpecTable */}
@@ -53,7 +80,13 @@ export function ProductShowcaseSection() {
           </div>
 
           {/* Spec Table */}
-          <SpecTable products={[product]} />
+          {product ? (
+            <SpecTable products={[product]} />
+          ) : (
+            <div className="text-slate-rock-400 text-sm py-8 text-center border border-dashed border-slate-rock-200 rounded-card">
+              Click a type above to view detailed specifications
+            </div>
+          )}
 
           {/* Link */}
           <div className="mt-6">

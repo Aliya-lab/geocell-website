@@ -32,8 +32,11 @@ export function Header() {
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-2 h-2 bg-eco-forest-400 rounded-full group-hover:bg-eco-forest-300 transition-colors" />
+            <Link href="/" className="flex items-center gap-2.5 group">
+              <svg width="28" height="28" viewBox="0 0 100 100" className="flex-shrink-0" aria-hidden="true">
+                <polygon points="50,8 88,28 88,72 50,92 12,72 12,28" fill="#2E7D32" />
+                <ellipse cx="50" cy="50" rx="18" ry="23" fill="#37474F" />
+              </svg>
               <span className="font-heading font-bold text-white text-lg tracking-wide">
                 SYLVAGEO
               </span>
