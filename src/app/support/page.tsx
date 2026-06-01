@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Installation guides, FAQ, and product selection tool for PCA geocell systems.',
   alternates: { canonical: 'https://www.sylvageo.com/support' },
   openGraph: {
-    title: 'Technical Support & FAQ | SylvaGeo',
+    title: 'Technical Support and FAQ',
     description: 'Installation guides, FAQ, and product selection tool for PCA geocell systems.',
     url: 'https://www.sylvageo.com/support',
   },

@@ -128,11 +128,13 @@ export function ContactPageClient() {
                 </Button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} noValidate className="space-y-5">
+              <form action="https://formspree.io/f/xwvzwaqj" method="POST" onSubmit={handleSubmit} noValidate className="space-y-5">
+                <input type="hidden" name="_next" value="https://www.sylvageo.com/contact" />
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <Field label="Company Name *" error={errors.company}>
                     <input
                       type="text"
+                      name="company"
                       value={form.company}
                       onChange={update('company')}
                       placeholder="Your company name"
@@ -146,6 +148,7 @@ export function ContactPageClient() {
                   <Field label="Your Name *" error={errors.name}>
                     <input
                       type="text"
+                      name="name"
                       value={form.name}
                       onChange={update('name')}
                       placeholder="Full name"
@@ -162,6 +165,7 @@ export function ContactPageClient() {
                   <Field label="Email *" error={errors.email}>
                     <input
                       type="email"
+                      name="email"
                       value={form.email}
                       onChange={update('email')}
                       placeholder="engineering@company.com"
@@ -175,6 +179,7 @@ export function ContactPageClient() {
                   <Field label="Phone" error={errors.phone}>
                     <input
                       type="tel"
+                      name="phone"
                       value={form.phone}
                       onChange={update('phone')}
                       placeholder="+86 ..."
@@ -183,9 +188,10 @@ export function ContactPageClient() {
                   </Field>
                 </div>
 
-                <Field label="Project Type *" error={errors.projectType}>
-                  <select
-                    value={form.projectType}
+                  <Field label="Project Type *" error={errors.projectType}>
+                    <select
+                      name="projectType"
+                      value={form.projectType}
                     onChange={update('projectType')}
                     className={`w-full border rounded-btn px-4 py-3 text-sm focus:outline-none focus:ring-2 transition-colors bg-white ${
                       errors.projectType
@@ -202,6 +208,7 @@ export function ContactPageClient() {
 
                 <Field label="Message">
                   <textarea
+                    name="message"
                     value={form.message}
                     onChange={update('message')}
                     rows={5}
@@ -286,18 +293,17 @@ export function ContactPageClient() {
               </div>
             </div>
 
-            {/* Map Embed */}
-            {/* TODO: Replace with actual Google Maps embed URL once precise address is available */}
+            {/* Map Embed - TODO: Replace with actual Google Maps embed URL once business address is available */}
             <div className="aspect-[4/3] rounded-card border border-slate-rock-50 overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d369095.1234567890!2d116.3!3d39.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDU5JzI1LjAiTiAxMTbCsDE3JzU5LjAiRQ!5e0!3m2!1sen!2scn!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50000!2d116.4074!3d39.9042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDU5JzI1LjAiTiAxMTbCsDE3JzU5LjAiRQ!5e0!3m2!1sen!2scn!4v2401010000000"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Company Location"
+                title="Company Location - TODO: update with actual address"
               />
             </div>
           </div>

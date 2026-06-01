@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   title: 'About SylvaGeo',
   description: 'Learn about SylvaGeo - professional PCA geocell manufacturer since 2010. 200+ engineering projects worldwide.',
   alternates: { canonical: 'https://www.sylvageo.com/about' },
+  openGraph: {
+    title: 'About SylvaGeo',
+    description: 'Learn about SylvaGeo - professional PCA geocell manufacturer since 2010.',
+    url: 'https://www.sylvageo.com/about',
+  },
 }
 
 const milestones = [

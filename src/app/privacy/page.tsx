@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   title: 'Privacy Policy',
   description: 'SylvaGeo Privacy Policy - how we collect, use, and protect your information.',
   alternates: { canonical: 'https://www.sylvageo.com/privacy' },
+  openGraph: {
+    title: 'Privacy Policy',
+    description: 'SylvaGeo Privacy Policy - how we collect, use, and protect your information.',
+    url: 'https://www.sylvageo.com/privacy',
+  },
 }
 
 export default function PrivacyPage() {
