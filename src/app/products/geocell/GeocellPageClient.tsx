@@ -16,7 +16,7 @@ const subNavLinks = [
 
 const downloadItems = [
   { name: 'Engineering Brochure', format: 'PDF', size: '', href: '/downloads/Sylvageo_Geocell_Engineering_Brochure.pdf' },
-  { name: 'Technical Data Sheet', format: 'PDF', size: '', href: '/downloads/technical-data-sheet.pdf' },
+  { name: 'Technical Data Sheet', format: 'PDF', size: '', href: '/downloads/Technical_Data_Sheet.pdf' },
   { name: 'Geocell System FAQ', format: 'PDF', size: '', href: '/downloads/Sylvageo_Geocell_System_FAQ.pdf' },
   { name: 'Installation Guide', format: 'PDF', size: '', href: '/downloads/Sylvageo_Geocell_Installation_Guide.pdf' },
 ]
