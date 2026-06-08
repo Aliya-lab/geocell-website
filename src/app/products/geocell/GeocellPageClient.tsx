@@ -15,19 +15,13 @@ const subNavLinks = [
 ]
 
 const downloadItems = [
-  // Uncomment each line when the actual file is placed in public/downloads/
-  // { name: 'Engineering Brochure', format: 'PDF', size: '', href: '/downloads/engineering-brochure.pdf' },
-  // { name: 'Technical Data Sheet', format: 'PDF', size: '', href: '/downloads/technical-data-sheet.pdf' },
-  // { name: 'Geocell System FAQ', format: 'PDF', size: '', href: '/downloads/geocell-system-faq.pdf' },
-  // { name: 'Installation Guide', format: 'PDF', size: '', href: '/downloads/installation-guide.pdf' },
+  { name: 'Engineering Brochure', format: 'PDF', size: '', href: '/downloads/Sylvageo_Geocell_Engineering_Brochure.pdf' },
+  { name: 'Technical Data Sheet', format: 'PDF', size: '', href: '/downloads/technical-data-sheet.pdf' },
+  { name: 'Geocell System FAQ', format: 'PDF', size: '', href: '/downloads/Sylvageo_Geocell_System_FAQ.pdf' },
+  { name: 'Installation Guide', format: 'PDF', size: '', href: '/downloads/Sylvageo_Geocell_Installation_Guide.pdf' },
 ]
 
-const downloadItemsComingSoon = [
-  { name: 'Engineering Brochure', format: 'PDF' },
-  { name: 'Technical Data Sheet', format: 'PDF' },
-  { name: 'Geocell System FAQ', format: 'PDF' },
-  { name: 'Installation Guide', format: 'PDF' },
-]
+const downloadItemsComingSoon: typeof downloadItems = []
 
 function SubNav({ activeSection }: { activeSection: string }) {
   return (
@@ -277,6 +271,35 @@ export function GeocellPageClient() {
             Download Center
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {downloadItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white border border-slate-rock-50 rounded-card shadow-card p-5 flex items-center gap-4 hover:border-eco-forest-200 hover:shadow-md transition-all group"
+              >
+                <div className="w-10 h-10 bg-eco-forest-50 rounded-btn flex items-center justify-center flex-shrink-0 group-hover:bg-eco-forest-100 transition-colors">
+                  <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="text-eco-forest-700">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-sm font-medium text-slate-rock-700 truncate group-hover:text-eco-forest-800 transition-colors">{item.name}</div>
+                  <div className="flex items-center gap-2 mt-0.5">
+                    <span className="text-xs bg-slate-rock-100 text-slate-rock-500 px-2 py-0.5 rounded-tag font-data">
+                      {item.format}
+                    </span>
+                    {item.size && (
+                      <span className="text-xs text-slate-rock-400">{item.size}</span>
+                    )}
+                  </div>
+                </div>
+                <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="text-slate-rock-400 group-hover:text-eco-forest-700 transition-colors flex-shrink-0">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+              </a>
+            ))}
             {downloadItemsComingSoon.map((item) => (
               <div
                 key={item.name}
