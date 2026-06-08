@@ -16,16 +16,16 @@ const subNavLinks = [
 
 const downloadItems = [
   // Uncomment each line when the actual file is placed in public/downloads/
-  // { name: 'Technical Data Sheet', format: 'PDF', size: '2.4 MB', href: '/downloads/technical-data-sheet.pdf' },
-  // { name: 'Test Reports', format: 'PDF', size: '1.8 MB', href: '/downloads/test-reports.pdf' },
-  // { name: 'CAD Drawings', format: 'DWG', size: '5.1 MB', href: '/downloads/cad-drawings.dwg' },
-  // { name: 'Installation Guide', format: 'PDF', size: '3.2 MB', href: '/downloads/installation-guide.pdf' },
+  // { name: 'Engineering Brochure', format: 'PDF', size: '', href: '/downloads/engineering-brochure.pdf' },
+  // { name: 'Technical Data Sheet', format: 'PDF', size: '', href: '/downloads/technical-data-sheet.pdf' },
+  // { name: 'Geocell System FAQ', format: 'PDF', size: '', href: '/downloads/geocell-system-faq.pdf' },
+  // { name: 'Installation Guide', format: 'PDF', size: '', href: '/downloads/installation-guide.pdf' },
 ]
 
 const downloadItemsComingSoon = [
+  { name: 'Engineering Brochure', format: 'PDF' },
   { name: 'Technical Data Sheet', format: 'PDF' },
-  { name: 'Test Reports', format: 'PDF' },
-  { name: 'CAD Drawings', format: 'DWG' },
+  { name: 'Geocell System FAQ', format: 'PDF' },
   { name: 'Installation Guide', format: 'PDF' },
 ]
 
