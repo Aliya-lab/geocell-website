@@ -57,9 +57,9 @@ export function HeroSection() {
           {/* Stats Row */}
           <div className="grid grid-cols-3 gap-6 mt-14 pt-8 border-t border-slate-rock-600/50">
             {[
-              { value: '15+', label: 'Years Experience' },
-              { value: '200+', label: 'Projects Completed' },
-              { value: '50+', label: 'Countries Served' },
+              { value: '15+', label: 'Years in Export Trade' },
+              { value: '6+', label: 'Years in Geosynthetics' },
+              { value: '800+', label: 'Industry Contacts' },
             ].map((stat) => (
               <div key={stat.label}>
                 <div className="font-heading font-bold text-white text-3xl">{stat.value}</div>
