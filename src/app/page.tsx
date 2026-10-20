@@ -7,7 +7,7 @@ import { CTABannerSection } from '@/components/sections/CTABannerSection'
 
 export const metadata: Metadata = {
   title: 'SylvaGeo - Professional Geocell Solutions',
-  description: 'SylvaGeo — independent geosynthetics sourcing advisory. Connecting international buyers with verified suppliers across geocell, geomembrane, geotextile, and concrete fabric.',
+  description: 'SylvaGeo is a B2B geosynthetics supplier serving international contractors, distributors, and project buyers with geocell and related geosynthetic products.',
   alternates: { canonical: 'https://www.sylvageo.com' },
 }
 
