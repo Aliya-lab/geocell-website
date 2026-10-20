@@ -23,7 +23,7 @@ export default function HomePage() {
             name: 'SylvaGeo',
             url: 'https://www.sylvageo.com',
             logo: 'https://www.sylvageo.com/favicon.ico',
-            description: 'Professional PCA geocell manufacturer for slope protection, road reinforcement, and channel lining.',
+            description: 'SylvaGeo is a geosynthetics supplier serving international contractors, distributors, and project buyers.',
             contactPoint: {
               '@type': 'ContactPoint',
               telephone: '+1-669-228-4383',

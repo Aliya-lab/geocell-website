@@ -23,9 +23,7 @@ export function Footer() {
               <span className="font-heading font-bold text-white text-xl">SYLVAGEO</span>
             </div>
             <p className="text-slate-rock-300 text-sm leading-relaxed">
-              SylvaGeo is a professional manufacturer of Polymer Nano-Composite Alloy
-              (PCA) geocell systems. Engineering-grade solutions for slope protection,
-              road reinforcement, and channel lining since 2010.
+              SylvaGeo supplies geocell and related geosynthetic products for infrastructure, ground stabilization, and erosion-control applications through partner manufacturing facilities.
             </p>
           </div>
 
@@ -99,9 +97,6 @@ export function Footer() {
               Privacy Policy
             </a>
           </div>
-          <p className="text-slate-rock-500 text-xs">
-            Manufactured with PCA Technology
-          </p>
         </div>
       </div>
     </footer>

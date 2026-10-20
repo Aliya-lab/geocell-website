@@ -7,7 +7,7 @@ Professional English product website for Geocell (Honeycomb Confinement System /
 - **Framework**: Next.js 15 (App Router)
 - **Styling**: Tailwind CSS 4
 - **Language**: TypeScript
-- **Deployment**: GitHub Pages (static export)
+- **Deployment**: Vercel (static export)
 
 ## Brand Design Tokens
 
@@ -20,7 +20,6 @@ Professional English product website for Geocell (Honeycomb Confinement System /
 
 ```
 geocell-website/
-├── .github/workflows/deploy.yml   # Auto-deploy to GitHub Pages
 ├── public/
 │   ├── downloads/                 # PDF, DWG files
 │   └── images/                    # Case study images
@@ -60,6 +59,8 @@ npm run build
 
 ## Deployment
 
-Push to `main` branch → GitHub Actions auto-builds and deploys to GitHub Pages.
-
-> **Note**: If using a custom domain, update `basePath` in `next.config.js` to `/` and create `public/CNAME`.
+- **Platform**: Vercel
+- **Production branch**: `master`
+- **Production domain**: https://www.sylvageo.com
+- Approved changes reaching `master` trigger the production deployment through the Vercel-connected repository.
+- GitHub Pages is not used for production.
