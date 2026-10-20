@@ -90,24 +90,6 @@ export function GeocellPageClient() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'ProductGroup',
-            name: 'PCA Geocell Series',
-            description: 'Professional PCA geocell systems for slope protection, road reinforcement, and channel lining.',
-            brand: { '@type': 'Brand', name: 'SylvaGeo' },
-            manufacturer: { '@type': 'Organization', name: 'SylvaGeo', url: 'https://www.sylvageo.com' },
-            hasVariant: geocellProducts.map((p) => ({
-              '@type': 'Product',
-              name: p.name,
-              description: `${p.name} - Cell height ${p.heights.join('/')}mm`,
-            })),
-          }),
-        }}
-      />
       {/* Page Banner */}
       <div className="bg-slate-rock-700 py-16 md:py-20">
         <div className="max-w-[1200px] mx-auto px-6">
