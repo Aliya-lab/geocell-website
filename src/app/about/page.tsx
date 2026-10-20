@@ -4,20 +4,14 @@ import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'About SylvaGeo',
-  description: 'SylvaGeo — independent geosynthetics sourcing advisory. Connecting international buyers with verified suppliers across geocell, geomembrane, geotextile, and concrete fabric.',
+  description: 'SylvaGeo is a B2B geosynthetics supplier serving international contractors, distributors, and project buyers with geocell and related geosynthetic products.',
   alternates: { canonical: 'https://www.sylvageo.com/about' },
   openGraph: {
     title: 'About SylvaGeo',
-    description: 'SylvaGeo — independent geosynthetics sourcing advisory.',
+    description: 'B2B geosynthetics supplier for international contractors, distributors, and project buyers.',
     url: 'https://www.sylvageo.com/about',
   },
 }
-
-const highlights = [
-  { value: '15+', label: 'Years in B2B Export Trade' },
-  { value: '6+', label: 'Years in Geosynthetics' },
-  { value: '800+', label: 'Direct Industry Contacts' },
-]
 
 const docCategories = [
   { name: 'Concrete Fabric', detail: 'SGS test report available upon request' },
@@ -34,7 +28,7 @@ export default function AboutPage() {
         <div className="max-w-[1200px] mx-auto px-6 text-center">
           <h1 className="text-4xl font-heading font-bold text-white">About Us</h1>
           <p className="text-slate-rock-200 mt-3 max-w-xl mx-auto">
-            Geosynthetics sourcing advisory — helping buyers find the right suppliers
+            Geosynthetics supply and project support for international B2B buyers
           </p>
         </div>
       </div>
@@ -49,21 +43,13 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-slate-rock-500 text-sm leading-relaxed">
                 <p>
-                  SylvaGeo is an independent geosynthetics sourcing advisory. We help
-                  international buyers navigate supplier selection across geocell,
-                  geomembrane, geotextile, concrete fabric, and related categories —
-                  with direct industry relationships, not directory listings.
+                  SylvaGeo is a B2B geosynthetics supplier serving contractors, distributors, and project buyers in international markets. We supply geocell and related geosynthetic products under the SylvaGeo brand through partner manufacturing facilities.
                 </p>
                 <p>
-                  Our work draws on 15 years of B2B export experience and 6 years of
-                  hands-on involvement in geosynthetics procurement. We've been on both
-                  sides of the transaction — which means we know where the gaps are
-                  between what suppliers claim and what buyers actually need.
+                  Our role includes coordinating product requirements, documentation, sourcing, and commercial support with customers and manufacturing partners.
                 </p>
                 <p>
-                  We work closely with engineering consultants, contractors, and government
-                  agencies to deliver customized solutions for slope protection, road
-                  reinforcement, channel lining, and mining applications.
+                  We support inquiries for ground stabilization, erosion control, road infrastructure, channel lining, and related civil applications.
                 </p>
               </div>
             </div>
@@ -76,21 +62,6 @@ export default function AboutPage() {
                 className="w-full h-full object-cover"
               />
             </div>
-          </div>
-        </section>
-
-        {/* Background */}
-        <section>
-          <h2 className="text-2xl font-heading font-bold text-slate-rock-700 mb-8 text-center">
-            Background
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto text-center">
-            {highlights.map((h) => (
-              <div key={h.label} className="bg-white border border-slate-rock-50 rounded-card p-6 shadow-card">
-                <div className="text-3xl font-heading font-bold text-eco-forest-800">{h.value}</div>
-                <div className="text-sm text-slate-rock-500 mt-2">{h.label}</div>
-              </div>
-            ))}
           </div>
         </section>
 
