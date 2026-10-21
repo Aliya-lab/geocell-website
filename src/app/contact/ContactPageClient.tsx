@@ -45,6 +45,8 @@ export function ContactPageClient() {
   })
   const [errors, setErrors] = useState<FormErrors>({})
   const [submitted, setSubmitted] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
+  const [submitting, setSubmitting] = useState(false)
 
   const validate = (): FormErrors => {
     const e: FormErrors = {}
@@ -64,6 +66,8 @@ export function ContactPageClient() {
       return
     }
     setErrors({})
+    setSubmitError(null)
+    setSubmitting(true)
     try {
       const res = await fetch('https://formspree.io/f/xwvzwaqj', {
         method: 'POST',
@@ -79,9 +83,13 @@ export function ContactPageClient() {
       })
       if (res.ok) {
         setSubmitted(true)
+      } else {
+        setSubmitError("We couldn't send your inquiry. Please try again. If the problem continues, email us at info@sylvageo.com.")
       }
     } catch {
-      // silently fail, form stays open
+      setSubmitError("We couldn't send your inquiry. Please try again. If the problem continues, email us at info@sylvageo.com.")
+    } finally {
+      setSubmitting(false)
     }
   }
 
@@ -217,8 +225,14 @@ export function ContactPageClient() {
                   />
                 </Field>
 
-                <Button type="submit" variant="primary" fullWidth className="min-h-[48px]">
-                  Submit Inquiry
+                {submitError && (
+                  <p role="alert" aria-live="polite" className="text-red-600 text-sm">
+                    {submitError}
+                  </p>
+                )}
+
+                <Button type="submit" variant="primary" fullWidth className="min-h-[48px]" disabled={submitting}>
+                  {submitting ? 'Sending...' : 'Submit Inquiry'}
                 </Button>
               </form>
             )}
