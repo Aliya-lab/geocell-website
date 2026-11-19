@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { Section } from '@/components/ui/Section'
 import { Button } from '@/components/ui/Button'
 import { DraftNotice } from '@/components/ui/DraftNotice'
-import { cbChannelIllustration, cbDataSheet, cbEnquireHref, cbGalleryNote, cbHome } from '@/data/concreteBlanket'
+import { cbDataSheet, cbEnquireHref, cbHome, cbProductHero } from '@/data/concreteBlanket'
 
 export function ConcreteBlanketEntrySection() {
   return (
@@ -34,17 +34,16 @@ export function ConcreteBlanketEntrySection() {
         </div>
 
         <figure>
-          <div className="aspect-[4/3] rounded-card border border-slate-rock-100 overflow-hidden bg-slate-rock-50">
+          <div className="aspect-[3/4] rounded-card border border-slate-rock-100 overflow-hidden bg-slate-rock-50">
             <Image
-              src={cbChannelIllustration.src}
-              alt={cbChannelIllustration.caption}
-              width={cbChannelIllustration.width}
-              height={cbChannelIllustration.height}
-              className="w-full h-full object-cover"
+              src={cbProductHero.src}
+              alt={cbProductHero.caption}
+              width={cbProductHero.width}
+              height={cbProductHero.height}
+              className="w-full h-full object-contain"
             />
           </div>
-          <figcaption className="mt-3 text-sm text-slate-rock-600">{cbChannelIllustration.caption}</figcaption>
-          <p className="mt-1 text-xs text-slate-rock-400 leading-relaxed">{cbGalleryNote}</p>
+          <figcaption className="mt-3 text-sm text-slate-rock-600">{cbProductHero.caption}</figcaption>
         </figure>
       </article>
     </Section>

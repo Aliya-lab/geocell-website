@@ -227,12 +227,12 @@ export const cbDownloads = [
 export const cbGalleryNote =
   'These photographs are for application illustration only. They are not filed Concrete Blanket case studies.'
 
-/** Landscape channel/ditch scene already used in the product-page gallery. */
-export const cbChannelIllustration = {
-  src: '/images/concrete-blanket/channel-lining-2.jpg',
-  width: 1440,
-  height: 1080,
-  caption: 'Channel and ditch lining',
+/** Homepage product image. Proportional resize of the supplied roll photo; not cropped. */
+export const cbProductHero = {
+  src: '/images/concrete-blanket/concrete-blanket-roll.jpg',
+  width: 1200,
+  height: 1600,
+  caption: 'Concrete Blanket (GCCM)',
 }
 
 export const cbGallery = [
