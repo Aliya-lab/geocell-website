@@ -227,11 +227,11 @@ export const cbDownloads = [
 export const cbGalleryNote =
   'These photographs are for application illustration only. They are not filed Concrete Blanket case studies.'
 
-/** Homepage product image. Supplied 5:4 roll photo, used uncropped. */
+/** Homepage product image. Supplied finished roll photo, used at its original pixels. */
 export const cbProductHero = {
-  src: '/images/concrete-blanket/concrete-blanket-roll-v2-5x4.jpg',
+  src: '/images/concrete-blanket/concrete-blanket-roll-v3.jpg',
   width: 1600,
-  height: 1280,
+  height: 1279,
   caption: 'Concrete Blanket (GCCM)',
 }
 
