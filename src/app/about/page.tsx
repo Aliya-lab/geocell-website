@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { DraftNotice } from '@/components/ui/DraftNotice'
 
 export const metadata: Metadata = {
   title: 'About SylvaGeo',
@@ -15,15 +14,15 @@ export const metadata: Metadata = {
 }
 
 const docCategories: { name: string; detail: string; href?: string; draft?: boolean }[] = [
-  {
-    name: 'Concrete Blanket (GCCM), also called Concrete Fabric — technical data sheet and product brochure available from the product page',
-    detail: '',
-    href: '/products/concrete-blanket',
-    draft: true,
-  },
   { name: 'Geocell', detail: 'Technical datasheet available upon request', href: '/products/geocell' },
   { name: 'Geomembrane HDPE', detail: 'Material specifications available upon request' },
   { name: 'Geotextile', detail: 'Product datasheet available upon request' },
+  {
+    name: 'Concrete Blanket (GCCM)',
+    detail: 'Technical data sheet and product brochure available from the product page',
+    href: '/products/concrete-blanket',
+    draft: true,
+  },
 ]
 
 export default function AboutPage() {
@@ -80,17 +79,21 @@ export default function AboutPage() {
             {docCategories.map((doc) => {
               const card = (
                 <>
+                  {doc.draft ? (
+                    <span className="absolute top-2 inset-x-2 text-right text-[10px] leading-none font-semibold text-slate-rock-400">
+                      Draft — unpublished
+                    </span>
+                  ) : null}
                   <div className="w-12 h-12 bg-eco-forest-50 rounded-btn flex items-center justify-center mx-auto mb-3">
                     <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="text-eco-forest-800" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                     </svg>
                   </div>
-                  {doc.draft ? <DraftNotice className="mb-3" /> : null}
-                  <div className={`font-heading font-semibold text-slate-rock-700 ${doc.draft ? 'text-sm leading-relaxed' : ''}`}>{doc.name}</div>
+                  <div className="font-heading font-semibold text-slate-rock-700">{doc.name}</div>
                   {doc.detail ? <div className="text-xs text-slate-rock-400 font-data mt-1">{doc.detail}</div> : null}
                 </>
               )
-              const className = 'bg-white border border-slate-rock-50 rounded-card p-6 text-center shadow-card hover:shadow-card-hover transition-shadow duration-200'
+              const className = 'relative bg-white border border-slate-rock-50 rounded-card p-6 text-center shadow-card hover:shadow-card-hover transition-shadow duration-200'
               if (doc.href) {
                 return (
                   <Link key={doc.name} href={doc.href} className={`block ${className}`}>

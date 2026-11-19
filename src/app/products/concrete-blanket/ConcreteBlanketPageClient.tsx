@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import { DraftNotice } from '@/components/ui/DraftNotice'
 import {
+  cbChannelIllustration,
   cbDataSheet,
   cbDownloads,
   cbEnquireHref,
@@ -106,37 +107,55 @@ export function ConcreteBlanketPageClient() {
 
       <div className="max-w-[1200px] mx-auto px-6 pb-20">
         <section id="product" className="py-16 scroll-mt-32">
-          <h2 className="text-2xl font-heading font-bold text-slate-rock-700 mb-6">The product</h2>
-          <div className="max-w-3xl space-y-4 text-sm text-slate-rock-600 leading-relaxed">
-            {cbPage.productParagraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-start">
+            <div>
+              <h2 className="text-2xl font-heading font-bold text-slate-rock-700 mb-6">The product</h2>
+              <div className="space-y-4 text-sm text-slate-rock-600 leading-relaxed">
+                {cbPage.productParagraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
 
-          <h3 className="text-xl font-heading font-semibold text-slate-rock-700 mt-12 mb-4">
-            Standard construction
-          </h3>
-          <div className="max-w-3xl space-y-4 text-sm text-slate-rock-600 leading-relaxed">
-            <p>{cbPage.standardConstruction}</p>
-            <p>
-              {cbPage.pvcBefore}
-              <Link href={cbEnquireHref} className="text-eco-forest-800 font-medium hover:underline">
-                {cbPage.pvcLink}
-              </Link>
-              {cbPage.pvcAfter}
-            </p>
+              <h3 className="text-xl font-heading font-semibold text-slate-rock-700 mt-12 mb-4">
+                Standard construction
+              </h3>
+              <div className="space-y-4 text-sm text-slate-rock-600 leading-relaxed">
+                <p>{cbPage.standardConstruction}</p>
+                <p>
+                  {cbPage.pvcBefore}
+                  <Link href={cbEnquireHref} className="text-eco-forest-800 font-medium hover:underline">
+                    {cbPage.pvcLink}
+                  </Link>
+                  {cbPage.pvcAfter}
+                </p>
+              </div>
+            </div>
+
+            <figure>
+              <div className="aspect-[4/3] rounded-card border border-slate-rock-100 overflow-hidden bg-slate-rock-50">
+                <Image
+                  src={cbChannelIllustration.src}
+                  alt={cbChannelIllustration.caption}
+                  width={cbChannelIllustration.width}
+                  height={cbChannelIllustration.height}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <figcaption className="mt-3 text-sm text-slate-rock-600">{cbChannelIllustration.caption}</figcaption>
+              <p className="mt-1 text-xs text-slate-rock-400 leading-relaxed">{cbGalleryNote}</p>
+            </figure>
           </div>
         </section>
 
         <section id="uses" className="py-16 border-t border-slate-rock-100 scroll-mt-32">
           <h2 className="text-2xl font-heading font-bold text-slate-rock-700 mb-4">Typical uses</h2>
-          <p className="text-sm text-slate-rock-600 leading-relaxed max-w-3xl">{cbPage.usesIntro}</p>
-          <ul className="mt-4 max-w-3xl list-disc pl-5 space-y-2 text-sm text-slate-rock-600 leading-relaxed">
+          <p className="text-sm text-slate-rock-600 leading-relaxed">{cbPage.usesIntro}</p>
+          <ul className="mt-4 list-disc pl-5 space-y-2 text-sm text-slate-rock-600 leading-relaxed">
             {cbPage.uses.map((use) => (
               <li key={use}>{use}</li>
             ))}
           </ul>
-          <div className="mt-6 max-w-3xl space-y-3 text-sm text-slate-rock-600 leading-relaxed">
+          <div className="mt-6 space-y-3 text-sm text-slate-rock-600 leading-relaxed">
             {cbPage.useNotes.map((note) => (
               <p key={note}>{note}</p>
             ))}
@@ -145,7 +164,7 @@ export function ConcreteBlanketPageClient() {
           <div className="mt-12 space-y-10">
             <div className="space-y-3">
               <h3 className="font-heading font-semibold text-slate-rock-700">Application photographs</h3>
-              <p className="text-sm text-slate-rock-600 leading-relaxed max-w-3xl">{cbGalleryNote}</p>
+              <p className="text-sm text-slate-rock-600 leading-relaxed">{cbGalleryNote}</p>
             </div>
             {cbGallery.map((group) => (
               <div key={group.caption}>
@@ -186,7 +205,7 @@ export function ConcreteBlanketPageClient() {
               </div>
             ))}
           </div>
-          <p className="mt-4 max-w-3xl text-sm text-slate-rock-600 leading-relaxed border-l-[3px] border-l-eco-forest-800 pl-4">
+          <p className="mt-4 text-sm text-slate-rock-600 leading-relaxedborder-l-[3px] border-l-eco-forest-800 pl-4">
             {cbPage.advantageFootnote}
           </p>
         </section>
@@ -195,7 +214,7 @@ export function ConcreteBlanketPageClient() {
           <h2 className="text-2xl font-heading font-bold text-slate-rock-700 mb-4">
             Installation in outline
           </h2>
-          <p className="text-sm text-slate-rock-600 leading-relaxed max-w-3xl mb-8">
+          <p className="text-sm text-slate-rock-600 leading-relaxed mb-8">
             {cbPage.installationIntro}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
@@ -207,7 +226,7 @@ export function ConcreteBlanketPageClient() {
               </div>
             ))}
           </div>
-          <p className="text-sm text-slate-rock-600 leading-relaxed max-w-3xl">{cbPage.installationDetail}</p>
+          <p className="text-sm text-slate-rock-600 leading-relaxed">{cbPage.installationDetail}</p>
           <div className="mt-6">
             <a href={cbInstallGuideHref} className="text-eco-forest-800 hover:text-eco-forest-900 hover:underline font-medium">
               Download the installation guide
@@ -219,7 +238,7 @@ export function ConcreteBlanketPageClient() {
           <h2 className="text-2xl font-heading font-bold text-slate-rock-700 mb-4">
             Key properties — standard uncoated range
           </h2>
-          <p className="text-sm text-slate-rock-600 leading-relaxed max-w-3xl mb-8">
+          <p className="text-sm text-slate-rock-600 leading-relaxed mb-8">
             {cbPage.propertiesIntro}
           </p>
 
@@ -285,17 +304,17 @@ export function ConcreteBlanketPageClient() {
               </tbody>
             </table>
           </div>
-          <p className="mt-6 max-w-3xl text-sm text-slate-rock-600 leading-relaxed">{cbPage.propertiesNote}</p>
+          <p className="mt-6 text-sm text-slate-rock-600 leading-relaxed">{cbPage.propertiesNote}</p>
 
           <h3 className="text-lg font-heading font-semibold text-slate-rock-700 mt-12 mb-4">
             Reference specification
           </h3>
-          <p className="max-w-3xl text-sm text-slate-rock-600 leading-relaxed">{cbPage.referenceSpec}</p>
+          <p className="text-sm text-slate-rock-600 leading-relaxed">{cbPage.referenceSpec}</p>
         </section>
 
         <section id="downloads" className="py-16 border-t border-slate-rock-100 scroll-mt-32">
           <h2 className="text-2xl font-heading font-bold text-slate-rock-700 mb-4">Downloads</h2>
-          <p className="text-sm text-slate-rock-600 leading-relaxed max-w-3xl mb-8">{cbPage.downloadsIntro}</p>
+          <p className="text-sm text-slate-rock-600 leading-relaxed mb-8">{cbPage.downloadsIntro}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {cbDownloads.map((item) => (
               <a
@@ -328,7 +347,7 @@ export function ConcreteBlanketPageClient() {
               </a>
             ))}
           </div>
-          <p className="text-sm text-slate-rock-500 leading-relaxed max-w-3xl mt-6">{cbPage.downloadsNote}</p>
+          <p className="text-sm text-slate-rock-500 leading-relaxed mt-6">{cbPage.downloadsNote}</p>
         </section>
 
         <section id="enquire" className="py-16 border-t border-slate-rock-100 scroll-mt-32">

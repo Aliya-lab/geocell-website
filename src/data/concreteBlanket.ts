@@ -227,6 +227,14 @@ export const cbDownloads = [
 export const cbGalleryNote =
   'These photographs are for application illustration only. They are not filed Concrete Blanket case studies.'
 
+/** Landscape channel/ditch scene already used in the product-page gallery. */
+export const cbChannelIllustration = {
+  src: '/images/concrete-blanket/channel-lining-2.jpg',
+  width: 1440,
+  height: 1080,
+  caption: 'Channel and ditch lining',
+}
+
 export const cbGallery = [
   {
     caption: 'Channel and ditch lining',
