@@ -1,26 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "/cb",
-      "destination": "/products/concrete-blanket",
-      "permanent": true
-    },
-    {
-      "source": "/CB",
-      "destination": "/products/concrete-blanket",
-      "permanent": true
-    },
-    {
-      "source": "/cb/",
-      "destination": "/products/concrete-blanket",
-      "permanent": true
-    },
-    {
-      "source": "/CB/",
-      "destination": "/products/concrete-blanket",
-      "permanent": true
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
