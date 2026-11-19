@@ -7,7 +7,7 @@ import { cbDataSheet, cbEnquireHref, cbHome, cbProductHero } from '@/data/concre
 export function ConcreteBlanketEntrySection() {
   return (
     <Section className="bg-white border-t border-slate-rock-100" id="concrete-blanket">
-      <article className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
+      <article className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
         <div>
           <DraftNotice />
           <p className="text-eco-forest-800 text-sm font-medium tracking-widest uppercase mt-4 mb-3">
@@ -33,17 +33,17 @@ export function ConcreteBlanketEntrySection() {
           </div>
         </div>
 
-        <figure>
-          <div className="aspect-[3/4] rounded-card border border-slate-rock-100 overflow-hidden bg-slate-rock-50">
+        <figure className="flex h-full min-h-0 flex-col">
+          <div className="relative min-h-0 w-full flex-1 overflow-hidden rounded-card bg-white aspect-[5/4] lg:aspect-auto">
             <Image
               src={cbProductHero.src}
               alt={cbProductHero.caption}
-              width={cbProductHero.width}
-              height={cbProductHero.height}
-              className="w-full h-full object-contain"
+              fill
+              sizes="(min-width: 1024px) 540px, 100vw"
+              className="object-contain object-center"
             />
           </div>
-          <figcaption className="mt-3 text-sm text-slate-rock-600">{cbProductHero.caption}</figcaption>
+          <figcaption className="mt-3 shrink-0 text-sm text-slate-rock-600">{cbProductHero.caption}</figcaption>
         </figure>
       </article>
     </Section>
