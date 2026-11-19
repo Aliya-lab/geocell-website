@@ -1,7 +1,7 @@
 /**
  * Concrete Blanket (GCCM) preview copy.
  * Source: DRAFT_WebsiteCopy_EN_ConcreteBlanket_SylvaGeo_v0.1_2026-11-19.
- * Wording is placed as written. The page remains draft — unpublished.
+ * Wording is placed as written.
  */
 
 export const cbEnquireHref = '/contact?product=concrete-blanket'
@@ -221,7 +221,7 @@ export const cbDownloads = [
 ]
 
 /**
- * Typical-use scene illustrations. Captions match corr draft section 1.3a.
+ * Typical-use scene illustrations. Captions match corrected copy section 1.3a.
  * drainage-*.jpg are roadside ditch scenes and use the channel caption.
  */
 export const cbGalleryNote =

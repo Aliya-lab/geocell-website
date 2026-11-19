@@ -3,7 +3,7 @@ import { ConcreteBlanketPageClient } from './ConcreteBlanketPageClient'
 import { cbPage } from '@/data/concreteBlanket'
 
 const description =
-  'Draft — unpublished. Concrete Blanket (CB) is a geosynthetic cementitious composite mat (GCCM). The standard uncoated range is 6 mm, 10 mm and 15 mm.'
+  'Concrete Blanket (CB) is a geosynthetic cementitious composite mat (GCCM). The standard uncoated range is 6 mm, 10 mm and 15 mm.'
 
 export const metadata: Metadata = {
   title: cbPage.title,

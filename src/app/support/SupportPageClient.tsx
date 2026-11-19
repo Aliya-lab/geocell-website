@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
-import { DraftNotice } from '@/components/ui/DraftNotice'
 import { geocellProducts } from '@/data/geocell'
 import { cbSupport } from '@/data/concreteBlanket'
 
@@ -271,8 +270,7 @@ export function SupportPageClient() {
         </section>
 
         <section className="border border-slate-rock-100 rounded-card shadow-card p-6 md:p-8">
-          <DraftNotice />
-          <h2 className="text-2xl font-heading font-bold text-slate-rock-700 mt-4 mb-4">
+          <h2 className="text-2xl font-heading font-bold text-slate-rock-700 mb-4">
             {cbSupport.heading}
           </h2>
           <p className="text-sm text-slate-rock-600 leading-relaxed max-w-3xl">{cbSupport.text}</p>

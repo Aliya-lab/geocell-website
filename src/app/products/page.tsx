@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
-import { DraftNotice } from '@/components/ui/DraftNotice'
 import { cbHome } from '@/data/concreteBlanket'
 
 export const metadata: Metadata = {
@@ -65,8 +64,7 @@ export default function ProductsPage() {
               </div>
             </div>
             <div className="p-6 flex flex-col flex-1">
-              <DraftNotice />
-              <p className="text-xs font-medium tracking-widest uppercase text-eco-forest-800 mt-4 mb-2">GCCM</p>
+              <p className="text-xs font-medium tracking-widest uppercase text-eco-forest-800 mb-2">GCCM</p>
               <h2 className="font-heading font-bold text-2xl text-slate-rock-700">{cbHome.heading}</h2>
               <p className="text-sm text-slate-rock-600 leading-relaxed mt-3">{cbHome.standfirst}</p>
               <p className="text-sm text-slate-rock-600 leading-relaxed mt-3">{cbHome.range}</p>

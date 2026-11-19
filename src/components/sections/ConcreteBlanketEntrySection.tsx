@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { Section } from '@/components/ui/Section'
 import { Button } from '@/components/ui/Button'
-import { DraftNotice } from '@/components/ui/DraftNotice'
 import { cbDataSheet, cbEnquireHref, cbHome, cbProductHero } from '@/data/concreteBlanket'
 
 export function ConcreteBlanketEntrySection() {
@@ -9,8 +8,7 @@ export function ConcreteBlanketEntrySection() {
     <Section className="bg-white border-t border-slate-rock-100" id="concrete-blanket">
       <article className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
         <div>
-          <DraftNotice />
-          <p className="text-eco-forest-800 text-sm font-medium tracking-widest uppercase mt-4 mb-3">
+          <p className="text-eco-forest-800 text-sm font-medium tracking-widest uppercase mb-3">
             GCCM
           </p>
           <h2 className="text-3xl font-heading font-bold text-slate-rock-700 mb-4">{cbHome.heading}</h2>
