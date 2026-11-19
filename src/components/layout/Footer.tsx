@@ -1,7 +1,8 @@
 import Link from 'next/link'
 
 const quickLinks = [
-  { label: 'Products', href: '/products/geocell' },
+  { label: 'PCA Geocell', href: '/products/geocell' },
+  { label: 'Concrete Blanket (GCCM)', href: '/products/concrete-blanket' },
   { label: 'Cases', href: '/cases' },
   { label: 'Tech Specs', href: '/products/geocell#specifications' },
   { label: 'About', href: '/about' },
@@ -23,7 +24,7 @@ export function Footer() {
               <span className="font-heading font-bold text-white text-xl">SYLVAGEO</span>
             </div>
             <p className="text-slate-rock-300 text-sm leading-relaxed">
-              SylvaGeo supplies geocell and related geosynthetic products for infrastructure, ground stabilization, and erosion-control applications through partner manufacturing facilities.
+              SylvaGeo supplies geocell and related geosynthetic products for infrastructure, ground stabilization, and erosion-control applications through partner manufacturing facilities, including Concrete Blanket (GCCM).
             </p>
           </div>
 

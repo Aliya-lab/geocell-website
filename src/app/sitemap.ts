@@ -6,7 +6,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://www.sylvageo.com'
   return [
     { url: base },
+    { url: `${base}/products` },
     { url: `${base}/products/geocell` },
+    { url: `${base}/products/concrete-blanket` },
     { url: `${base}/cases` },
     { url: `${base}/support` },
     { url: `${base}/about` },

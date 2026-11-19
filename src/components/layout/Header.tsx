@@ -4,8 +4,12 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 
+const productLinks = [
+  { label: 'PCA Geocell', href: '/products/geocell' },
+  { label: 'Concrete Blanket (GCCM)', href: '/products/concrete-blanket' },
+]
+
 const navLinks = [
-  { label: 'Products', href: '/products/geocell' },
   { label: 'Cases', href: '/cases' },
   { label: 'Tech Specs', href: '/products/geocell#specifications' },
   { label: 'About', href: '/about' },
@@ -44,6 +48,30 @@ export function Header() {
 
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center gap-8">
+              <div className="relative group">
+                <Link
+                  href="/products"
+                  className="text-white text-sm font-medium hover:text-eco-forest-400 transition-colors duration-150 inline-flex items-center gap-1"
+                >
+                  Products
+                  <svg width="12" height="12" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
+                  </svg>
+                </Link>
+                <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 absolute left-0 top-full pt-2 z-50">
+                  <div className="bg-slate-rock-800 border border-slate-rock-600 min-w-[260px] py-2 shadow-md">
+                    {productLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className="block px-4 py-2 text-sm text-white hover:text-eco-forest-400 transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -96,6 +124,25 @@ export function Header() {
               </button>
             </div>
             <nav className="flex flex-col p-6 gap-4">
+              <Link
+                href="/products"
+                onClick={() => setMobileOpen(false)}
+                className="text-white text-base font-medium hover:text-eco-forest-400 transition-colors py-2"
+              >
+                Products
+              </Link>
+              <div className="flex flex-col gap-1 pl-3 border-l border-slate-rock-600">
+                {productLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="text-slate-rock-200 text-sm font-medium hover:text-eco-forest-400 transition-colors py-2"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
               {navLinks.map((link) => (
                 <Link
                   key={link.href}

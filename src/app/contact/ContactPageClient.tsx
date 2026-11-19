@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Section } from '@/components/ui/Section'
 import { Button } from '@/components/ui/Button'
 
@@ -10,6 +10,7 @@ const projectTypes = [
   'Channel Lining',
   'Retaining Wall',
   'Mining Application',
+  'Concrete Blanket (GCCM)',
   'Other',
 ]
 
@@ -47,6 +48,12 @@ export function ContactPageClient() {
   const [submitted, setSubmitted] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
+
+  useEffect(() => {
+    const product = new URLSearchParams(window.location.search).get('product')
+    if (product !== 'concrete-blanket') return
+    setForm((prev) => ({ ...prev, projectType: 'Concrete Blanket (GCCM)' }))
+  }, [])
 
   const validate = (): FormErrors => {
     const e: FormErrors = {}

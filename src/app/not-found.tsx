@@ -18,7 +18,7 @@ export default function NotFound() {
             Back to Home
           </Link>
           <Link
-            href="/products/geocell"
+            href="/products"
             className="inline-flex items-center justify-center h-11 px-8 border border-slate-rock-200 text-slate-rock-700 text-sm font-semibold rounded-btn hover:border-eco-forest-800 hover:text-eco-forest-800 transition-colors"
           >
             View Products
