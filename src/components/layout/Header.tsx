@@ -6,11 +6,12 @@ import { Button } from '@/components/ui/Button'
 
 const productLinks = [
   { label: 'PCA Geocell', href: '/products/geocell' },
-  { label: 'Concrete Blanket', href: '/products/concrete-blanket' },
+  { label: 'Concrete Blanket (GCCM)', href: '/products/concrete-blanket' },
 ]
 
 const navLinks = [
   { label: 'Cases', href: '/cases' },
+  { label: 'Tech Specs', href: '/products/geocell#specifications' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ]
@@ -58,7 +59,7 @@ export function Header() {
                   </svg>
                 </Link>
                 <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 absolute left-0 top-full pt-2 z-50">
-                  <div className="bg-slate-rock-800 border border-slate-rock-600 min-w-[220px] py-2 shadow-md">
+                  <div className="bg-slate-rock-800 border border-slate-rock-600 min-w-[260px] py-2 shadow-md">
                     {productLinks.map((link) => (
                       <Link
                         key={link.href}

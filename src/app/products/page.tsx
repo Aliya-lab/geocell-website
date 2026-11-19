@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
-import { cbGrades, cbHeroImage, cbProduct } from '@/data/concreteBlanket'
+import { DraftNotice } from '@/components/ui/DraftNotice'
+import { cbHome } from '@/data/concreteBlanket'
 
 export const metadata: Metadata = {
   title: 'Products',
@@ -57,33 +57,23 @@ export default function ProductsPage() {
           </article>
 
           <article className="bg-white border border-slate-rock-50 rounded-card shadow-card overflow-hidden flex flex-col">
-            <div className="aspect-[16/9] bg-slate-rock-50 overflow-hidden">
-              <Image
-                src={cbHeroImage.src}
-                alt={cbHeroImage.alt}
-                width={cbHeroImage.width}
-                height={cbHeroImage.height}
-                className="w-full h-full object-cover"
-              />
+            <div className="aspect-[16/9] bg-slate-rock-700 flex items-center justify-center px-6">
+              <div className="text-center">
+                <p className="text-eco-forest-400 text-xs font-medium tracking-widest uppercase">GCCM</p>
+                <p className="text-white font-heading font-bold text-3xl mt-2">6 / 10 / 15 mm</p>
+                <p className="text-slate-rock-300 text-sm mt-2">Standard uncoated supply</p>
+              </div>
             </div>
             <div className="p-6 flex flex-col flex-1">
-              <p className="text-xs font-medium tracking-widest uppercase text-eco-forest-800 mb-2">GCCM</p>
-              <h2 className="font-heading font-bold text-2xl text-slate-rock-700">Concrete Blanket</h2>
-              <p className="text-sm text-slate-rock-600 leading-relaxed mt-3">{cbProduct.standfirst}</p>
-              <p className="text-sm text-slate-rock-500 mt-3">
-                Standard uncoated grades:{' '}
-                {cbGrades.map((grade) => `${grade.thickness} (${grade.mass})`).join(' · ')}
-              </p>
-              <div className="mt-6 flex flex-wrap gap-4 items-center">
+              <DraftNotice />
+              <p className="text-xs font-medium tracking-widest uppercase text-eco-forest-800 mt-4 mb-2">GCCM</p>
+              <h2 className="font-heading font-bold text-2xl text-slate-rock-700">{cbHome.heading}</h2>
+              <p className="text-sm text-slate-rock-600 leading-relaxed mt-3">{cbHome.standfirst}</p>
+              <p className="text-sm text-slate-rock-600 leading-relaxed mt-3">{cbHome.range}</p>
+              <div className="mt-6">
                 <Button variant="primary" href="/products/concrete-blanket">
                   View Concrete Blanket
                 </Button>
-                <Link
-                  href="/downloads/GCCM_ConcreteBlanket_TechnicalDataSheet_Issue1.2.pdf"
-                  className="text-sm text-eco-forest-800 font-medium hover:underline"
-                >
-                  Download data sheet
-                </Link>
               </div>
             </div>
           </article>

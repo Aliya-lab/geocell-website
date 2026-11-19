@@ -1,9 +1,19 @@
 'use client'
 
 import { useState } from 'react'
-import { Section } from '@/components/ui/Section'
+import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
+import { DraftNotice } from '@/components/ui/DraftNotice'
 import { geocellProducts } from '@/data/geocell'
+import { cbSupport } from '@/data/concreteBlanket'
+
+const cbSupportLinks = [
+  { label: 'Installation Guide', href: '/products/concrete-blanket#download-installation-guide' },
+  { label: 'FAQ', href: '/products/concrete-blanket#download-faq' },
+  { label: 'Safety Data Sheet', href: '/products/concrete-blanket#download-sds' },
+  { label: 'Installation Accessories', href: '/products/concrete-blanket#download-accessories' },
+  { label: 'View Concrete Blanket', href: '/products/concrete-blanket' },
+]
 
 const faqs = [
   {
@@ -258,6 +268,23 @@ export function SupportPageClient() {
               </div>
             ))}
           </div>
+        </section>
+
+        <section className="border border-slate-rock-100 rounded-card shadow-card p-6 md:p-8">
+          <DraftNotice />
+          <h2 className="text-2xl font-heading font-bold text-slate-rock-700 mt-4 mb-4">
+            {cbSupport.heading}
+          </h2>
+          <p className="text-sm text-slate-rock-600 leading-relaxed max-w-3xl">{cbSupport.text}</p>
+          <ul className="mt-4 flex flex-col sm:flex-row sm:flex-wrap gap-x-6 gap-y-2">
+            {cbSupportLinks.map((link) => (
+              <li key={link.label}>
+                <Link href={link.href} className="text-sm text-eco-forest-800 font-medium hover:underline">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </section>
       </div>
     </>

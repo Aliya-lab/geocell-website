@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { DraftNotice } from '@/components/ui/DraftNotice'
 
 export const metadata: Metadata = {
   title: 'About SylvaGeo',
@@ -13,11 +14,12 @@ export const metadata: Metadata = {
   },
 }
 
-const docCategories: { name: string; detail: string; href?: string }[] = [
+const docCategories: { name: string; detail: string; href?: string; draft?: boolean }[] = [
   {
-    name: 'Concrete Blanket',
-    detail: 'Concrete Fabric SGS test report available upon request',
+    name: 'Concrete Blanket (GCCM) — technical data sheet and product brochure available from the product page.',
+    detail: '',
     href: '/products/concrete-blanket',
+    draft: true,
   },
   { name: 'Geocell', detail: 'Technical datasheet available upon request', href: '/products/geocell' },
   { name: 'Geomembrane HDPE', detail: 'Material specifications available upon request' },
@@ -47,7 +49,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-slate-rock-500 text-sm leading-relaxed">
                 <p>
-                  SylvaGeo is a B2B geosynthetics supplier serving contractors, distributors, and project buyers in international markets. We supply geocell and related geosynthetic products under the SylvaGeo brand through partner manufacturing facilities.
+                  SylvaGeo is a B2B geosynthetics supplier serving contractors, distributors, and project buyers in international markets. We supply geocell and related geosynthetic products under the SylvaGeo brand through partner manufacturing facilities. We also supply Concrete Blanket (GCCM).
                 </p>
                 <p>
                   Our role includes coordinating product requirements, documentation, sourcing, and commercial support with customers and manufacturing partners.
@@ -83,8 +85,9 @@ export default function AboutPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                     </svg>
                   </div>
-                  <div className="font-heading font-semibold text-slate-rock-700">{doc.name}</div>
-                  <div className="text-xs text-slate-rock-400 font-data mt-1">{doc.detail}</div>
+                  {doc.draft ? <DraftNotice className="mb-3" /> : null}
+                  <div className={`font-heading font-semibold text-slate-rock-700 ${doc.draft ? 'text-sm leading-relaxed' : ''}`}>{doc.name}</div>
+                  {doc.detail ? <div className="text-xs text-slate-rock-400 font-data mt-1">{doc.detail}</div> : null}
                 </>
               )
               const className = 'bg-white border border-slate-rock-50 rounded-card p-6 text-center shadow-card hover:shadow-card-hover transition-shadow duration-200'
