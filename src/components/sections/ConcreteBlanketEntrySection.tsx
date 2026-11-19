@@ -14,6 +14,7 @@ export function ConcreteBlanketEntrySection() {
         <h2 className="text-3xl font-heading font-bold text-slate-rock-700 mb-4">{cbHome.heading}</h2>
         <p className="text-slate-rock-600 text-sm leading-relaxed">{cbHome.standfirst}</p>
         <p className="text-slate-rock-600 text-sm leading-relaxed mt-3">{cbHome.range}</p>
+        <p className="text-slate-rock-600 text-sm leading-relaxed mt-3">{cbHome.typicalUses}</p>
         <div className="flex flex-col sm:flex-row flex-wrap gap-4 mt-8">
           <Button variant="primary" href="/products/concrete-blanket">
             View Concrete Blanket

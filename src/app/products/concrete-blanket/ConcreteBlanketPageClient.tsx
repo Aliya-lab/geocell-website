@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import { DraftNotice } from '@/components/ui/DraftNotice'
@@ -8,6 +9,8 @@ import {
   cbDataSheet,
   cbDownloads,
   cbEnquireHref,
+  cbGallery,
+  cbGalleryNote,
   cbInstallGuideHref,
   cbMechanicalRows,
   cbPage,
@@ -136,6 +139,37 @@ export function ConcreteBlanketPageClient() {
           <div className="mt-6 max-w-3xl space-y-3 text-sm text-slate-rock-600 leading-relaxed">
             {cbPage.useNotes.map((note) => (
               <p key={note}>{note}</p>
+            ))}
+          </div>
+
+          <div className="mt-12 space-y-10">
+            <div className="space-y-3">
+              <h3 className="font-heading font-semibold text-slate-rock-700">Application photographs</h3>
+              <p className="text-sm text-slate-rock-600 leading-relaxed max-w-3xl">{cbGalleryNote}</p>
+            </div>
+            {cbGallery.map((group) => (
+              <div key={group.caption}>
+                <h3 className="font-heading font-semibold text-slate-rock-700 mb-4">{group.caption}</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {group.photos.map((photo) => (
+                    <figure
+                      key={photo.src}
+                      className="bg-white border border-slate-rock-50 rounded-card shadow-card overflow-hidden"
+                    >
+                      <div className="aspect-[4/3] bg-slate-rock-50">
+                        <Image
+                          src={photo.src}
+                          alt={group.caption}
+                          width={photo.width}
+                          height={photo.height}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <figcaption className="px-4 py-3 text-sm text-slate-rock-600">{group.caption}</figcaption>
+                    </figure>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </section>

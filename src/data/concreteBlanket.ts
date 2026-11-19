@@ -20,6 +20,7 @@ export const cbPage = {
   productParagraphs: [
     'Concrete Blanket (CB) is a geosynthetic cementitious composite mat (GCCM). In some project communications it is also called Cement Blanket; both names refer to the same product and are abbreviated CB.',
     'The material is supplied dry, in rolls. After it is placed, it is hydrated with water and hardens into a thin concrete layer. No on-site mixing of concrete is required for the standard installation.',
+    'It is also called Concrete Fabric.',
   ],
   standardConstruction:
     'The standard Concrete Blanket is uncoated. It has a cementitious core contained between two textile layers — a top fabric and a bottom fabric — and has no membrane. This is the standard range offered for general use, in thicknesses of 6 mm, 10 mm and 15 mm.',
@@ -112,6 +113,8 @@ export const cbHome = {
   standfirst:
     'Concrete Blanket (CB) is a geosynthetic cementitious composite mat. It is supplied dry, in rolls. After it is placed, it is hydrated with water and hardens into a thin concrete layer. No on-site mixing of concrete is required for the standard installation.',
   range: 'The standard uncoated range is supplied in thicknesses of 6 mm, 10 mm and 15 mm.',
+  typicalUses:
+    'Used for lining and protection of channels and ditches, slope and bank protection, pond and reservoir lining, and other erosion-control or surface-protection works where a thin, rapidly placed concrete layer is required.',
 }
 
 export const cbSupport = {
@@ -214,5 +217,42 @@ export const cbDownloads = [
     name: 'Terms and Conditions of Sale',
     issue: 'Issue 1.0, 15 November 2026',
     href: '/downloads/GCCM_ConcreteBlanket_TermsAndConditionsOfSale_EN_2026-11-15.pdf',
+  },
+]
+
+/**
+ * Typical-use scene illustrations. Captions match corr draft section 1.3a.
+ * drainage-*.jpg are roadside ditch scenes and use the channel caption.
+ */
+export const cbGalleryNote =
+  'These photographs are for application illustration only. They are not filed Concrete Blanket case studies.'
+
+export const cbGallery = [
+  {
+    caption: 'Channel and ditch lining',
+    photos: [
+      { src: '/images/concrete-blanket/channel-lining-1.jpg', width: 1080, height: 1440 },
+      { src: '/images/concrete-blanket/channel-lining-2.jpg', width: 1440, height: 1080 },
+      { src: '/images/concrete-blanket/channel-lining-3.jpg', width: 960, height: 1280 },
+      { src: '/images/concrete-blanket/drainage-1.jpg', width: 1080, height: 1080 },
+      { src: '/images/concrete-blanket/drainage-2.jpg', width: 1080, height: 1080 },
+      { src: '/images/concrete-blanket/drainage-3.jpg', width: 1080, height: 1080 },
+    ],
+  },
+  {
+    caption: 'Slope and bank protection',
+    photos: [
+      { src: '/images/concrete-blanket/slope-protection-1.jpg', width: 1440, height: 1080 },
+      { src: '/images/concrete-blanket/slope-protection-2.jpg', width: 1440, height: 1080 },
+      { src: '/images/concrete-blanket/slope-protection-3.jpg', width: 1702, height: 1276 },
+    ],
+  },
+  {
+    caption: 'Pond and reservoir lining',
+    photos: [
+      { src: '/images/concrete-blanket/pond-lining-1.jpg', width: 1702, height: 1276 },
+      { src: '/images/concrete-blanket/pond-lining-2.jpg', width: 1080, height: 1440 },
+      { src: '/images/concrete-blanket/pond-lining-3.jpg', width: 1702, height: 1276 },
+    ],
   },
 ]

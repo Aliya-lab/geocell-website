@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 const docCategories: { name: string; detail: string; href?: string; draft?: boolean }[] = [
   {
-    name: 'Concrete Blanket (GCCM) — technical data sheet and product brochure available from the product page.',
+    name: 'Concrete Blanket (GCCM), also called Concrete Fabric — technical data sheet and product brochure available from the product page',
     detail: '',
     href: '/products/concrete-blanket',
     draft: true,
@@ -49,7 +49,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-slate-rock-500 text-sm leading-relaxed">
                 <p>
-                  SylvaGeo is a B2B geosynthetics supplier serving contractors, distributors, and project buyers in international markets. We supply geocell and related geosynthetic products under the SylvaGeo brand through partner manufacturing facilities. We also supply Concrete Blanket (GCCM).
+                  SylvaGeo is a B2B geosynthetics supplier serving contractors, distributors, and project buyers in international markets. We supply geocell and related geosynthetic products under the SylvaGeo brand through partner manufacturing facilities. We also supply Concrete Blanket (GCCM), also called Concrete Fabric.
                 </p>
                 <p>
                   Our role includes coordinating product requirements, documentation, sourcing, and commercial support with customers and manufacturing partners.
