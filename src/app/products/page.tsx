@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
+import { DraftNoticeBar } from '@/components/ui/DraftNotice'
 import { cbHome } from '@/data/concreteBlanket'
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
 export default function ProductsPage() {
   return (
     <>
+      <DraftNoticeBar />
       <div className="bg-slate-rock-700 py-16 md:py-20">
         <div className="max-w-[1200px] mx-auto px-6 text-center">
           <h1 className="text-4xl font-heading font-bold text-white">Products</h1>

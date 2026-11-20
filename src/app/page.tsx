@@ -5,6 +5,7 @@ import { ProductShowcaseSection } from '@/components/sections/ProductShowcaseSec
 import { ConcreteBlanketEntrySection } from '@/components/sections/ConcreteBlanketEntrySection'
 import { CasesPreviewSection } from '@/components/sections/CasesPreviewSection'
 import { CTABannerSection } from '@/components/sections/CTABannerSection'
+import { DraftNoticeBar } from '@/components/ui/DraftNotice'
 
 export const metadata: Metadata = {
   title: 'SylvaGeo - Professional Geocell Solutions',
@@ -34,6 +35,7 @@ export default function HomePage() {
           }),
         }}
       />
+      <DraftNoticeBar />
       <HeroSection />
       <FeaturesSection />
       <ProductShowcaseSection />

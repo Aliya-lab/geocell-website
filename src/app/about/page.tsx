@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { DraftNoticeBar } from '@/components/ui/DraftNotice'
 
 export const metadata: Metadata = {
   title: 'About SylvaGeo',
@@ -27,6 +28,7 @@ const docCategories: { name: string; detail: string; href?: string }[] = [
 export default function AboutPage() {
   return (
     <>
+      <DraftNoticeBar />
       {/* Banner */}
       <div className="bg-slate-rock-700 py-16 md:py-20">
         <div className="max-w-[1200px] mx-auto px-6 text-center">
