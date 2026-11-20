@@ -8,11 +8,11 @@ export const cbEnquireHref = '/contact?product=concrete-blanket'
 
 export const cbDataSheet = {
   name: 'Technical Data Sheet',
-  href: '/downloads/GCCM_ConcreteBlanket_6-10-15mm_uncoated_ASTM-D8364_EN_2026-11-17.pdf',
+  href: '/downloads/GCCM_ConcreteBlanket_6-10-15mm_uncoated_ASTM-D8364_EN_2026-11-20.pdf',
 }
 
 export const cbInstallGuideHref =
-  '/downloads/GCCM_ConcreteBlanket_InstallationGuide_6-10-15mm_uncoated_EN_2026-11-17.pdf'
+  '/downloads/GCCM_ConcreteBlanket_InstallationGuide_6-10-15mm_uncoated_EN_2026-11-20.pdf'
 
 export const cbPage = {
   title: 'Concrete Blanket — standard uncoated GCCM',
@@ -95,7 +95,7 @@ export const cbPage = {
   installationDetail:
     'Minimum hydration water is 4.0 L/m², 6.25 L/m² and 9.5 L/m² for the 6 mm, 10 mm and 15 mm grades respectively (not less than 50% of the dry mass); an excess of water is recommended. The standard overlap is a minimum of 100 mm. After hydration the material is typically workable for 1–2 hours, varying with air temperature and humidity, and is typically ready for service after 24 hours. Wait at least 48 hours before aggressive surface treatment. Full procedure, fixing, weather precautions and accessories are given in the current installation guide and accessories list.',
   propertiesIntro:
-    'The figures below are taken from the current Concrete Blanket Technical Data Sheet, Issue 1.2 (17 November 2026). They apply only to the standard uncoated 6 mm, 10 mm and 15 mm range. Typical dry roll masses are taken from the packing and storage note and exclude the pallet and wrapping.',
+    'The figures below are taken from the current Concrete Blanket Technical Data Sheet, Issue 1.3 (20 November 2026). They apply only to the standard uncoated 6 mm, 10 mm and 15 mm range. Typical dry roll masses are taken from the packing and storage note and exclude the pallet and wrapping.',
   propertiesNote:
     'Compressive strength is the strength of the cementitious mix, determined in accordance with ASTM D8329 (water/cementitious materials ratio representative of in-use hydration; specimens prepared as cubes or cylinders). It is not a compressive test on a cut specimen of the hardened mat. The governing GCCM material specification is ASTM D8364/D8364M-21 (reapproved 2026). Thickness grades are not classified as Type I, II or III under that specification. Length and width are typical values; tolerances are typically +5% / −2.5%. Roll size can be customised to project requirements. Values are typical, based on current test data, and are not a contractual warranty.',
   referenceSpec:
@@ -161,62 +161,62 @@ export const cbDownloads = [
   {
     id: 'datasheet',
     name: 'Technical Data Sheet',
-    issue: 'Issue 1.2, 17 November 2026',
+    issue: 'Issue 1.3, 20 November 2026',
     href: cbDataSheet.href,
   },
   {
     id: 'brochure',
     name: 'Product Brochure',
-    issue: 'Issue 1.2, 17 November 2026',
-    href: '/downloads/GCCM_ConcreteBlanket_ProductBrochure_6-10-15mm_uncoated_EN_2026-11-17_Issue1.2.pdf',
+    issue: 'Issue 1.3, 20 November 2026',
+    href: '/downloads/GCCM_ConcreteBlanket_ProductBrochure_6-10-15mm_uncoated_EN_2026-11-20.pdf',
   },
   {
     id: 'introduction',
     name: 'Product Introduction',
-    issue: 'Issue 1.1, 17 November 2026',
-    href: '/downloads/GCCM_ConcreteBlanket_ProductIntroduction_EN_2026-11-17.pdf',
+    issue: 'Issue 1.2, 20 November 2026',
+    href: '/downloads/GCCM_ConcreteBlanket_ProductIntroduction_EN_2026-11-20.pdf',
   },
   {
     id: 'installation-guide',
     name: 'Installation Guide',
-    issue: 'Issue 1.1, 17 November 2026',
+    issue: 'Issue 1.2, 20 November 2026',
     href: cbInstallGuideHref,
   },
   {
     id: 'faq',
     name: 'FAQ',
-    issue: 'Issue 1.1, 17 November 2026',
-    href: '/downloads/GCCM_ConcreteBlanket_FAQ_6-10-15mm_uncoated_EN_2026-11-17.pdf',
+    issue: 'Issue 1.2, 20 November 2026',
+    href: '/downloads/GCCM_ConcreteBlanket_FAQ_6-10-15mm_uncoated_EN_2026-11-20.pdf',
   },
   {
     id: 'packing-storage',
     name: 'Packing and Storage',
-    issue: 'Issue 1.0, 15 November 2026',
-    href: '/downloads/GCCM_ConcreteBlanket_PackingStorage_6-10-15mm_uncoated_EN_2026-11-15.pdf',
+    issue: 'Issue 1.1, 20 November 2026',
+    href: '/downloads/GCCM_ConcreteBlanket_PackingStorage_6-10-15mm_uncoated_EN_2026-11-20.pdf',
   },
   {
     id: 'sds',
     name: 'Safety Data Sheet',
-    issue: 'Issue 1.0, 15 November 2026',
-    href: '/downloads/GCCM_ConcreteBlanket_SDS_6-10-15mm_uncoated_EN_2026-11-15.pdf',
+    issue: 'Issue 1.1, 20 November 2026',
+    href: '/downloads/GCCM_ConcreteBlanket_SDS_6-10-15mm_uncoated_EN_2026-11-20.pdf',
   },
   {
     id: 'accessories',
     name: 'Installation Accessories',
-    issue: 'Issue 1.0, 15 November 2026',
-    href: '/downloads/GCCM_ConcreteBlanket_InstallationAccessories_6-10-15mm_uncoated_EN_2026-11-15.pdf',
+    issue: 'Issue 1.1, 20 November 2026',
+    href: '/downloads/GCCM_ConcreteBlanket_InstallationAccessories_6-10-15mm_uncoated_EN_2026-11-20.pdf',
   },
   {
     id: 'asbestos-free',
     name: 'Asbestos-free Declaration',
-    issue: 'Issue 1.0, 15 November 2026',
-    href: '/downloads/GCCM_ConcreteBlanket_AsbestosFreeDeclaration_6-10-15mm_uncoated_EN_2026-11-15.pdf',
+    issue: 'Issue 1.1, 20 November 2026',
+    href: '/downloads/GCCM_ConcreteBlanket_AsbestosFreeDeclaration_6-10-15mm_uncoated_EN_2026-11-20.pdf',
   },
   {
     id: 'terms',
     name: 'Terms and Conditions of Sale',
-    issue: 'Issue 1.0, 15 November 2026',
-    href: '/downloads/GCCM_ConcreteBlanket_TermsAndConditionsOfSale_EN_2026-11-15.pdf',
+    issue: 'Issue 1.1, 20 November 2026',
+    href: '/downloads/GCCM_ConcreteBlanket_TermsAndConditionsOfSale_EN_2026-11-20.pdf',
   },
 ]
 
