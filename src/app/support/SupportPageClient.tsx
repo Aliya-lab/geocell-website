@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
-import { DraftNoticeBar } from '@/components/ui/DraftNotice'
 import { geocellProducts } from '@/data/geocell'
 import { cbSupport } from '@/data/concreteBlanket'
 
@@ -204,7 +203,6 @@ export function SupportPageClient() {
 
   return (
     <>
-      <DraftNoticeBar />
       {/* Banner */}
       <div className="bg-slate-rock-700 py-16 md:py-20">
         <div className="max-w-[1200px] mx-auto px-6 text-center">
