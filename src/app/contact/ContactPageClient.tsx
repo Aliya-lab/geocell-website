@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { Section } from '@/components/ui/Section'
 import { Button } from '@/components/ui/Button'
+import { DraftNoticeBar } from '@/components/ui/DraftNotice'
 
 const projectTypes = [
   'Slope Protection',
@@ -111,6 +112,7 @@ export function ContactPageClient() {
 
   return (
     <>
+      <DraftNoticeBar />
       {/* Banner */}
       <div className="bg-slate-rock-700 py-16 md:py-20">
         <div className="max-w-[1200px] mx-auto px-6 text-center">
