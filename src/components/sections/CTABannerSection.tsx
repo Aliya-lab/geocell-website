@@ -13,7 +13,7 @@ export function CTABannerSection() {
       </p>
       <div className="mt-8">
         <Button variant="primary" href="/contact" className="min-h-[48px] px-8 py-3 text-base">
-          Get a Quote
+          Enquire
         </Button>
       </div>
     </Section>
