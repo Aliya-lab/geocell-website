@@ -116,7 +116,7 @@ export function ContactPageClient() {
         <div className="max-w-[1200px] mx-auto px-6 text-center">
           <h1 className="text-4xl font-heading font-bold text-white">Contact Us</h1>
           <p className="text-slate-rock-200 mt-3 max-w-xl mx-auto">
-            Get in touch for technical consultation and project quotes
+            Request product information, or contact us about a project. You can also email or call us using the details below.
           </p>
         </div>
       </div>
@@ -197,7 +197,7 @@ export function ContactPageClient() {
                       name="phone"
                       value={form.phone}
                       onChange={update('phone')}
-                      placeholder="+86 ..."
+                      placeholder="+1 ..."
                       className="w-full border border-slate-rock-200 rounded-btn px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-eco-forest focus:border-eco-forest transition-colors"
                     />
                   </Field>
@@ -227,7 +227,7 @@ export function ContactPageClient() {
                     value={form.message}
                     onChange={update('message')}
                     rows={5}
-                    placeholder="Describe your project requirements, site conditions, and estimated quantity..."
+                    placeholder="Describe your project or the information you need. Include any site conditions or estimated quantity if known."
                     className="w-full border border-slate-rock-200 rounded-btn px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-eco-forest focus:border-eco-forest transition-colors resize-none"
                   />
                 </Field>
@@ -239,7 +239,7 @@ export function ContactPageClient() {
                 )}
 
                 <Button type="submit" variant="primary" fullWidth className="min-h-[48px]" disabled={submitting}>
-                  {submitting ? 'Sending...' : 'Submit Inquiry'}
+                  {submitting ? 'Sending...' : 'Submit enquiry'}
                 </Button>
               </form>
             )}

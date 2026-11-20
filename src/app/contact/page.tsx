@@ -2,7 +2,9 @@ import type { Metadata } from 'next'
 import { ContactPageClient } from './ContactPageClient'
 
 export const metadata: Metadata = {
-  title: 'Contact Us - Get a Quote',
+  title: {
+    absolute: 'Contact Us — Enquiry | SylvaGeo',
+  },
   description: 'Contact SylvaGeo for technical consultation, product specifications, and project quotes.',
   alternates: { canonical: 'https://www.sylvageo.com/contact' },
   openGraph: {
