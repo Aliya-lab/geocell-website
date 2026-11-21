@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useId, useRef, useState, type FormEvent } from 'react'
+import Link from 'next/link'
 
 /** Same endpoint and JSON POST the contact page uses. */
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xwvzwaqj'
@@ -289,6 +290,16 @@ export function DocumentRequestDialog({
             >
               Submit request
             </button>
+            <p className="mt-3 text-xs text-slate-rock-400 text-center leading-relaxed">
+              We use your details to respond to your request. See our{' '}
+              <Link
+                href="/privacy"
+                className="underline hover:text-eco-forest-800 focus:outline-none focus:ring-2 focus:ring-eco-forest focus:ring-offset-2"
+              >
+                Privacy Policy
+              </Link>
+              .
+            </p>
           </form>
         </div>
       </div>
