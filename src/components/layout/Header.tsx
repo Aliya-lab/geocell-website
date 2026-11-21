@@ -19,7 +19,7 @@ const navLinks = [
 function Wordmark({ className }: { className: string }) {
   return (
     <img
-      src="/images/sylvageo-wordmark-v04.png"
+      src="/images/sylvageo-wordmark-v04-reverse.png"
       alt="SylvaGeo"
       width={1324}
       height={270}
@@ -47,10 +47,10 @@ export function Header() {
       >
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="flex items-center justify-between h-16">
-            {/* Approved v0.4 wordmark, served unchanged. Its gray matches this bar, so it sits on white. */}
+            {/* Pending-review reverse variant: full-white wordmark, including the final O, on the existing dark bar. */}
             <Link
               href="/"
-              className="flex h-16 shrink-0 items-center bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-eco-forest"
+              className="flex h-16 shrink-0 items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-eco-forest"
             >
               <Wordmark className="block h-[36px] w-auto max-w-none md:h-[40px] lg:h-[44px]" />
             </Link>
@@ -121,7 +121,7 @@ export function Header() {
           {/* Full width below 640px so the header wordmark is not sliced. */}
           <div className="flex h-full w-full flex-col bg-slate-rock-800 sm:w-72">
             <div className="flex items-center justify-between gap-3 border-b border-slate-rock-600 px-4 py-3 sm:p-6">
-              <Link href="/" onClick={() => setMobileOpen(false)} className="flex shrink-0 items-center bg-white sm:hidden">
+              <Link href="/" onClick={() => setMobileOpen(false)} className="flex shrink-0 items-center sm:hidden">
                 <Wordmark className="block h-[36px] w-auto max-w-none" />
               </Link>
               <span className="hidden font-heading font-bold text-white text-lg sm:inline">Menu</span>
