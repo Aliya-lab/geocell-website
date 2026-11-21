@@ -16,6 +16,18 @@ const navLinks = [
   { label: 'Contact', href: '/contact' },
 ]
 
+function Wordmark({ className }: { className: string }) {
+  return (
+    <img
+      src="/images/sylvageo-wordmark-v04.png"
+      alt="SylvaGeo"
+      width={1324}
+      height={270}
+      className={className}
+    />
+  )
+}
+
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -35,19 +47,16 @@ export function Header() {
       >
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <Link href="/" className="flex items-center gap-2.5 group">
-              <svg width="28" height="28" viewBox="0 0 100 100" className="flex-shrink-0" aria-hidden="true">
-                <polygon points="50,8 88,28 88,72 50,92 12,72 12,28" fill="#2E7D32" />
-                <ellipse cx="50" cy="50" rx="18" ry="23" fill="#37474F" />
-              </svg>
-              <span className="font-heading font-bold text-white text-lg tracking-wide">
-                SYLVAGEO
-              </span>
+            {/* Approved v0.4 wordmark, served unchanged. Its gray matches this bar, so it sits on white. */}
+            <Link
+              href="/"
+              className="flex h-16 shrink-0 items-center bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-eco-forest"
+            >
+              <Wordmark className="block h-[36px] w-auto max-w-none md:h-[40px] lg:h-[44px]" />
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center gap-8">
+            <nav className="hidden md:flex items-center gap-4 lg:gap-8">
               <div className="relative group">
                 <Link
                   href="/products"
@@ -109,10 +118,13 @@ export function Header() {
             onClick={() => setMobileOpen(false)}
           />
 
-          {/* Drawer */}
-          <div className="w-72 bg-slate-rock-800 h-full flex flex-col">
-            <div className="flex items-center justify-between p-6 border-b border-slate-rock-600">
-              <span className="font-heading font-bold text-white text-lg">Menu</span>
+          {/* Full width below 640px so the header wordmark is not sliced. */}
+          <div className="flex h-full w-full flex-col bg-slate-rock-800 sm:w-72">
+            <div className="flex items-center justify-between gap-3 border-b border-slate-rock-600 px-4 py-3 sm:p-6">
+              <Link href="/" onClick={() => setMobileOpen(false)} className="flex shrink-0 items-center bg-white sm:hidden">
+                <Wordmark className="block h-[36px] w-auto max-w-none" />
+              </Link>
+              <span className="hidden font-heading font-bold text-white text-lg sm:inline">Menu</span>
               <button
                 onClick={() => setMobileOpen(false)}
                 className="text-slate-rock-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-eco-forest p-1"
