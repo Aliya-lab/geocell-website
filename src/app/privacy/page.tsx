@@ -18,7 +18,7 @@ export default function PrivacyPage() {
       <div className="bg-slate-rock-700 py-16 md:py-20">
         <div className="max-w-[1200px] mx-auto px-6 text-center">
           <h1 className="text-4xl font-heading font-bold text-white">Privacy Policy</h1>
-          <p className="text-slate-rock-200 mt-3">Last updated: May 2026</p>
+          <p className="text-slate-rock-200 mt-3">Last updated: November 2026</p>
         </div>
       </div>
 
@@ -43,7 +43,7 @@ export default function PrivacyPage() {
             <ul className="space-y-2 text-sm text-slate-rock-500">
               <li className="flex items-start gap-2">
                 <span className="text-eco-forest-600 mt-0.5">•</span>
-                <span><strong className="text-slate-rock-700">Contact Information:</strong> Name, company name, email address, and phone number submitted through our contact form.</span>
+                <span><strong className="text-slate-rock-700">Contact Information:</strong> Name, company name, email address and phone number submitted through our contact form, and name, company name, email address and country submitted through our document request form.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-eco-forest-600 mt-0.5">•</span>
@@ -91,6 +91,10 @@ export default function PrivacyPage() {
               <li className="flex items-start gap-2">
                 <span className="text-eco-forest-600 mt-0.5">•</span>
                 <span><strong className="text-slate-rock-700">Google Maps:</strong> Our contact page embeds a Google Maps widget to display our location. Google's privacy policy applies to map interactions.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-eco-forest-600 mt-0.5">•</span>
+                <span><strong className="text-slate-rock-700">Formspree:</strong> We use Formspree to receive submissions from our contact form and document request form. Formspree's privacy policy applies to the data it processes.</span>
               </li>
             </ul>
           </section>

@@ -11,9 +11,6 @@ export const cbDataSheet = {
   href: '/downloads/GCCM_ConcreteBlanket_6-10-15mm_uncoated_ASTM-D8364_EN_2026-11-20.pdf',
 }
 
-export const cbInstallGuideHref =
-  '/downloads/GCCM_ConcreteBlanket_InstallationGuide_6-10-15mm_uncoated_EN_2026-11-20.pdf'
-
 export const cbPage = {
   title: 'Concrete Blanket — standard uncoated GCCM',
   subtitle: 'CB 6 / 10 / 15 mm',
@@ -157,7 +154,21 @@ export const cbMechanicalRows: CbMechanicalRow[] = [
   { property: 'Final tensile strength, MD / CD', method: 'ASTM D4885', unit: 'kN/m', value: '> 30 / > 30' },
 ]
 
-export const cbDownloads = [
+export interface CbDownloadItem {
+  id: string
+  name: string
+  issue: string
+  /** Set only for documents that stay directly downloadable. */
+  href?: string
+}
+
+export const cbDownloads: CbDownloadItem[] = [
+  {
+    id: 'introduction',
+    name: 'Product Introduction',
+    issue: 'Issue 1.2, 20 November 2026',
+    href: '/downloads/GCCM_ConcreteBlanket_ProductIntroduction_EN_2026-11-20.pdf',
+  },
   {
     id: 'datasheet',
     name: 'Technical Data Sheet',
@@ -168,19 +179,7 @@ export const cbDownloads = [
     id: 'brochure',
     name: 'Product Brochure',
     issue: 'Issue 1.3, 20 November 2026',
-    href: '/downloads/GCCM_ConcreteBlanket_ProductBrochure_6-10-15mm_uncoated_EN_2026-11-20.pdf',
-  },
-  {
-    id: 'introduction',
-    name: 'Product Introduction',
-    issue: 'Issue 1.2, 20 November 2026',
-    href: '/downloads/GCCM_ConcreteBlanket_ProductIntroduction_EN_2026-11-20.pdf',
-  },
-  {
-    id: 'installation-guide',
-    name: 'Installation Guide',
-    issue: 'Issue 1.2, 20 November 2026',
-    href: cbInstallGuideHref,
+    href: '/downloads/GCCM_ConcreteBlanket_ProductBrochure_6-10-15mm_uncoated_EN_2026-11-20_Issue1.3.pdf',
   },
   {
     id: 'faq',
@@ -189,34 +188,34 @@ export const cbDownloads = [
     href: '/downloads/GCCM_ConcreteBlanket_FAQ_6-10-15mm_uncoated_EN_2026-11-20.pdf',
   },
   {
+    id: 'installation-guide',
+    name: 'Installation Guide',
+    issue: 'Issue 1.2, 20 November 2026',
+  },
+  {
     id: 'packing-storage',
     name: 'Packing and Storage',
     issue: 'Issue 1.1, 20 November 2026',
-    href: '/downloads/GCCM_ConcreteBlanket_PackingStorage_6-10-15mm_uncoated_EN_2026-11-20.pdf',
   },
   {
     id: 'sds',
     name: 'Safety Data Sheet',
     issue: 'Issue 1.1, 20 November 2026',
-    href: '/downloads/GCCM_ConcreteBlanket_SDS_6-10-15mm_uncoated_EN_2026-11-20.pdf',
   },
   {
     id: 'accessories',
     name: 'Installation Accessories',
     issue: 'Issue 1.1, 20 November 2026',
-    href: '/downloads/GCCM_ConcreteBlanket_InstallationAccessories_6-10-15mm_uncoated_EN_2026-11-20.pdf',
   },
   {
     id: 'asbestos-free',
     name: 'Asbestos-free Declaration',
     issue: 'Issue 1.1, 20 November 2026',
-    href: '/downloads/GCCM_ConcreteBlanket_AsbestosFreeDeclaration_6-10-15mm_uncoated_EN_2026-11-20.pdf',
   },
   {
     id: 'terms',
     name: 'Terms and Conditions of Sale',
     issue: 'Issue 1.1, 20 November 2026',
-    href: '/downloads/GCCM_ConcreteBlanket_TermsAndConditionsOfSale_EN_2026-11-20.pdf',
   },
 ]
 

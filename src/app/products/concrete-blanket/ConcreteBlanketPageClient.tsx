@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
@@ -10,11 +10,13 @@ import {
   cbEnquireHref,
   cbGallery,
   cbGalleryNote,
-  cbInstallGuideHref,
   cbMechanicalRows,
   cbPage,
   cbPhysicalRows,
 } from '@/data/concreteBlanket'
+import { DocumentRequestDialog } from './DocumentRequestDialog'
+
+const REQUEST_SUCCESS = 'Thank you. Our technical sales team will contact you.'
 
 const subNavLinks = [
   { label: 'Product', href: '#product' },
@@ -51,6 +53,15 @@ function SubNav({ activeSection }: { activeSection: string }) {
 
 export function ConcreteBlanketPageClient() {
   const [activeSection, setActiveSection] = useState('#product')
+  const [requestDocument, setRequestDocument] = useState<string | null>(null)
+  const [requestNotice, setRequestNotice] = useState<string | null>(null)
+  const requestTriggerRef = useRef<HTMLElement | null>(null)
+
+  useEffect(() => {
+    if (!requestNotice) return
+    const timer = window.setTimeout(() => setRequestNotice(null), 8000)
+    return () => window.clearTimeout(timer)
+  }, [requestNotice])
 
   useEffect(() => {
     const sectionIds = subNavLinks.map((link) => link.href.slice(1))
@@ -202,8 +213,8 @@ export function ConcreteBlanketPageClient() {
           </div>
           <p className="text-sm text-slate-rock-600 leading-relaxed">{cbPage.installationDetail}</p>
           <div className="mt-6">
-            <a href={cbInstallGuideHref} className="text-eco-forest-800 hover:text-eco-forest-900 hover:underline font-medium">
-              Download the installation guide
+            <a href="#download-installation-guide" className="text-eco-forest-800 hover:text-eco-forest-900 hover:underline font-medium">
+              Request the installation guide
             </a>
           </div>
         </section>
@@ -290,36 +301,71 @@ export function ConcreteBlanketPageClient() {
           <h2 className="text-2xl font-heading font-bold text-slate-rock-700 mb-4">Downloads</h2>
           <p className="text-sm text-slate-rock-600 leading-relaxed mb-8">{cbPage.downloadsIntro}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {cbDownloads.map((item) => (
-              <a
-                key={item.id}
-                id={`download-${item.id}`}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white border border-slate-rock-50 rounded-card shadow-card p-5 flex items-center gap-4 hover:border-eco-forest-200 hover:shadow-md transition-all group scroll-mt-32"
-              >
-                <div className="w-10 h-10 bg-eco-forest-50 rounded-btn flex items-center justify-center flex-shrink-0 group-hover:bg-eco-forest-100 transition-colors">
-                  <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="text-eco-forest-700" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            {cbDownloads.map((item) =>
+              item.href ? (
+                <a
+                  key={item.id}
+                  id={`download-${item.id}`}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white border border-slate-rock-50 rounded-card shadow-card p-5 flex items-center gap-4 hover:border-eco-forest-200 hover:shadow-md transition-all group scroll-mt-32"
+                >
+                  <div className="w-10 h-10 bg-eco-forest-50 rounded-btn flex items-center justify-center flex-shrink-0 group-hover:bg-eco-forest-100 transition-colors">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="text-eco-forest-700" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-sm font-medium text-slate-rock-700 group-hover:text-eco-forest-800 transition-colors">
+                      {item.name}
+                    </div>
+                    <div className="flex flex-wrap items-center gap-2 mt-0.5">
+                      <span className="text-xs bg-slate-rock-100 text-slate-rock-500 px-2 py-0.5 rounded-tag font-data">
+                        PDF
+                      </span>
+                      <span className="text-xs text-slate-rock-400">{item.issue}</span>
+                    </div>
+                  </div>
+                  <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="text-slate-rock-400 group-hover:text-eco-forest-700 transition-colors flex-shrink-0" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                   </svg>
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="text-sm font-medium text-slate-rock-700 group-hover:text-eco-forest-800 transition-colors">
-                    {item.name}
+                </a>
+              ) : (
+                <div
+                  key={item.id}
+                  id={`download-${item.id}`}
+                  className="bg-white border border-slate-rock-50 rounded-card shadow-card p-5 flex items-start gap-4 scroll-mt-32"
+                >
+                  <div className="w-10 h-10 bg-eco-forest-50 rounded-btn flex items-center justify-center flex-shrink-0">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="text-eco-forest-700" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
                   </div>
-                  <div className="flex flex-wrap items-center gap-2 mt-0.5">
-                    <span className="text-xs bg-slate-rock-100 text-slate-rock-500 px-2 py-0.5 rounded-tag font-data">
-                      PDF
-                    </span>
-                    <span className="text-xs text-slate-rock-400">{item.issue}</span>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-sm font-medium text-slate-rock-700">{item.name}</div>
+                    <div className="flex flex-wrap items-center gap-2 mt-0.5">
+                      <span className="text-xs bg-slate-rock-100 text-slate-rock-500 px-2 py-0.5 rounded-tag font-data">
+                        PDF
+                      </span>
+                      <span className="text-xs text-slate-rock-400">{item.issue}</span>
+                    </div>
+                    <button
+                      type="button"
+                      aria-haspopup="dialog"
+                      aria-label={`Request from technical sales: ${item.name}`}
+                      onClick={(event) => {
+                        requestTriggerRef.current = event.currentTarget
+                        setRequestDocument(item.name)
+                      }}
+                      className="mt-3 inline-flex items-center justify-center font-medium border-2 border-slate-rock-700 text-slate-rock-700 bg-transparent rounded-btn px-3 py-2 text-sm min-h-[44px] hover:bg-slate-rock-700 hover:text-white active:bg-slate-rock-800 focus:outline-none focus:ring-2 focus:ring-slate-rock-500 focus:ring-offset-2"
+                    >
+                      Request from technical sales
+                    </button>
                   </div>
                 </div>
-                <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="text-slate-rock-400 group-hover:text-eco-forest-700 transition-colors flex-shrink-0" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                </svg>
-              </a>
-            ))}
+              )
+            )}
           </div>
           <p className="text-sm text-slate-rock-500 leading-relaxed mt-6">{cbPage.downloadsNote}</p>
         </section>
@@ -335,6 +381,29 @@ export function ConcreteBlanketPageClient() {
             </div>
           </div>
         </section>
+      </div>
+      {requestDocument && (
+        <DocumentRequestDialog
+          key={requestDocument}
+          documentName={requestDocument}
+          returnFocusRef={requestTriggerRef}
+          onClose={() => setRequestDocument(null)}
+          onSuccess={() => {
+            setRequestDocument(null)
+            setRequestNotice(REQUEST_SUCCESS)
+          }}
+        />
+      )}
+      <div
+        role="status"
+        aria-live="polite"
+        className={
+          requestNotice
+            ? 'fixed bottom-4 left-4 right-4 sm:left-1/2 sm:right-auto sm:w-[28rem] sm:-translate-x-1/2 z-[110] bg-eco-forest-800 text-white text-sm text-center px-4 py-3 rounded-btn shadow-md'
+            : 'sr-only'
+        }
+      >
+        {requestNotice}
       </div>
     </>
   )
