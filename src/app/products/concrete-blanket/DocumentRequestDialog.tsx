@@ -6,7 +6,7 @@ import { useEffect, useId, useRef, useState, type FormEvent } from 'react'
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xwvzwaqj'
 
 const SUBMIT_ERROR =
-  "We couldn't send your inquiry. Please try again. If the problem continues, email us at info@sylvageo.com."
+  "We couldn't send your request. Please try again. If the problem continues, email us at info@sylvageo.com."
 
 const FOCUSABLE =
   'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
@@ -44,7 +44,7 @@ export function DocumentRequestDialog({
   const [email, setEmail] = useState('')
   const [company, setCompany] = useState('')
   const [country, setCountry] = useState('')
-  const [message, setMessage] = useState(documentName)
+  const [message, setMessage] = useState(`Requested document: ${documentName}`)
   const [errors, setErrors] = useState<{ name?: string; email?: string }>({})
   const [submitError, setSubmitError] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)

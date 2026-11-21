@@ -179,7 +179,7 @@ export const cbDownloads: CbDownloadItem[] = [
     id: 'brochure',
     name: 'Product Brochure',
     issue: 'Issue 1.3, 20 November 2026',
-    href: '/downloads/GCCM_ConcreteBlanket_ProductBrochure_6-10-15mm_uncoated_EN_2026-11-20.pdf',
+    href: '/downloads/GCCM_ConcreteBlanket_ProductBrochure_6-10-15mm_uncoated_EN_2026-11-20_Issue1.3.pdf',
   },
   {
     id: 'faq',

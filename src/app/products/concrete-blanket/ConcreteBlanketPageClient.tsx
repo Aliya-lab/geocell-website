@@ -219,7 +219,7 @@ export function ConcreteBlanketPageClient() {
           <p className="text-sm text-slate-rock-600 leading-relaxed">{cbPage.installationDetail}</p>
           <div className="mt-6">
             <a href="#download-installation-guide" className="text-eco-forest-800 hover:text-eco-forest-900 hover:underline font-medium">
-              Download the installation guide
+              Request the installation guide
             </a>
           </div>
         </section>
