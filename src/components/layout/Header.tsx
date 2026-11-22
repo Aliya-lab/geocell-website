@@ -82,7 +82,7 @@ export function Header() {
                 </Link>
               ))}
               <Button variant="primary" href="/contact" className="text-sm px-4 py-2">
-                Get Quote
+                Enquire
               </Button>
             </nav>
 
@@ -155,7 +155,7 @@ export function Header() {
               ))}
               <div className="pt-4 border-t border-slate-rock-600">
                 <Button variant="primary" href="/contact" fullWidth>
-                  Get Quote
+                  Enquire
                 </Button>
               </div>
             </nav>

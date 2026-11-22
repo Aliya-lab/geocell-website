@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
+import { DraftNoticeBar } from '@/components/ui/DraftNotice'
 import {
   cbDataSheet,
   cbDownloads,
@@ -85,6 +86,7 @@ export function ConcreteBlanketPageClient() {
 
   return (
     <>
+      <DraftNoticeBar />
       <div className="bg-slate-rock-700 py-16 md:py-20">
         <div className="max-w-[1200px] mx-auto px-6 text-center">
           <p className="text-eco-forest-400 text-sm font-medium tracking-widest uppercase mb-3">

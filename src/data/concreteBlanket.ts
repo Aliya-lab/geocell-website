@@ -101,8 +101,7 @@ export const cbPage = {
     'This page should be read with the current official documents for the standard uncoated 6 / 10 / 15 mm range.',
   downloadsNote:
     'Claims not supported by the confirmed data sheet or by a cited test report are not made on this page.',
-  enquire:
-    'Have a project to discuss? Price, lead time and commercial terms are provided against a specific enquiry.',
+  enquire: 'Request product information, or contact us about a project.',
 }
 
 export const cbHome = {
