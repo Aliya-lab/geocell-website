@@ -35,9 +35,9 @@ module.exports = {
         },
       },
       fontFamily: {
-        heading: ['Inter', 'DM Sans', 'system-ui', 'sans-serif'],
-        body: ['Inter', 'system-ui', 'sans-serif'],
-        data: ['JetBrains Mono', 'Fira Code', 'monospace'],
+        heading: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        body: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        data: ['var(--font-mono)', 'monospace'],
       },
       borderRadius: {
         btn: '4px',
