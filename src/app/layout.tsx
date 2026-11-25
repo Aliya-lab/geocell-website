@@ -3,7 +3,6 @@ import { Inter, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { DraftNotice } from '@/components/layout/DraftNotice'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const mono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' })
@@ -59,7 +58,6 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <DraftNotice />
         <Header />
         <main id="main-content">{children}</main>
         <Footer />
